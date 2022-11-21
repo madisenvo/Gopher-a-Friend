@@ -5,7 +5,7 @@ const sequelize = require('../config/connection');
 class GeoComment extends Model {}
 
 Comment.init({
-    geo_comment_id: {
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,

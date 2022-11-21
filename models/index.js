@@ -15,7 +15,7 @@ GeoPost.belongsTo(User, {
 })
 
 GeoPost.hasMany(GeoComment, {
-    foreignKey: 'geoPost_id'
+    foreignKey: 'geo_post_id'
 })
 
 GeoComment.belongsTo(User, {
@@ -23,7 +23,7 @@ GeoComment.belongsTo(User, {
 })
 
 GeoComment.belongsTo(GeoPost, {
-    foreignKey: 'geoPost_id'
+    foreignKey: 'geo_post_id'
 })
 
 module.exports = { User, GeoComment, GeoPost };

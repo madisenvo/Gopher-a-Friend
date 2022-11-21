@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 class GeoPost extends Model {}
 
 GeoPost.init({
-    geo_id: {
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
