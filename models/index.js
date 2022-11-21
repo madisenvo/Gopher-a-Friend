@@ -1,3 +1,5 @@
+// TODO: back end: add all other page data
+
 const User = require('./User');
 const GeoPost = require('./GeoPost');
 const GeoComment = require('./GeoComment');
