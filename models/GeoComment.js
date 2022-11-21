@@ -1,23 +1,17 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class GeoPost extends Model {}
 
-GeoPost.init({
-    geo_id: {
+class GeoComment extends Model {}
+
+Comment.init({
+    geo_comment_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
     },
-    geo_title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [1]
-        }
-    },
-    geo_text: {
+    geo_comment_text: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -26,8 +20,17 @@ GeoPost.init({
     },
     user_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'user',
+            key: 'id'
+        }
+    },
+    geo_post_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'geoPost',
             key: 'id'
         }
     }
@@ -35,7 +38,8 @@ GeoPost.init({
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'geoPost'
+    modelName: 'geoComment'
 })
 
-module.exports = GeoPost;
+
+module.exports = GeoComment;
