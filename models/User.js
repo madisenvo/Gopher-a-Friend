@@ -8,6 +8,7 @@ class User extends Model {
   }
 }
 
+// TODO: back end : add survey data to model
 User.init(
   {
     id: {
