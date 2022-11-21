@@ -7,3 +7,5 @@ router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 
 module.exports = router;
+
+// TODO: add routes we create (to topics page, chatroom pages, etc)
