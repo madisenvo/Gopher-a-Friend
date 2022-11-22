@@ -2,25 +2,26 @@ const router = require('express').Router();
 const { ArtComment, ArtPost, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
+//find all art posts
+// realtive path = /api/artpost
 router.get('/', (req, res) => {
     ArtPost.findAll({
             attributes: ['id', 'art_text', 'art_title'],
-            order: [
-                ['DESC']
-            ],
+            // order: [
+            //     ['DESC']
+            // ],
             include: [{
                     model: User,
                     attributes: ['username'],
                 },
-                {
-                    model: Comment,
-                    attributes: ['id', 'art_comment_text', 'art_post_id', 'user_id'],
-                    include: {
-                        model: User,
-                        attributes: ['username'],
-                    },
-                },
+                // {
+                //     model: Comment,
+                //     attributes: ['id', 'art_comment_text', 'art_post_id', 'user_id'],
+                //     include: {
+                //         model: User,
+                //         attributes: ['username'],
+                //     },
+                // },
             ],
         })
         .then((dbPostData) => res.json(dbPostData))
@@ -30,26 +31,27 @@ router.get('/', (req, res) => {
         });
 });
 
-
+//finds art post by id 
+//relative path = /api/artpost/:id (works)
 router.get('/:id', (req, res) => {
     ArtPost.findOne({
             where: {
                 id: req.params.id,
             },
             attributes: ['id', 'art_text', 'art_title'],
-            include: [{
-                    model: User,
-                    attributes: ['username'],
-                },
-                {
-                    model: Comment,
-					attributes: ['id', 'art_comment_text', 'art_post_id', 'user_id'],
-                    include: {
-                        model: User,
-                        attributes: ['username'],
-                    },
-                },
-            ],
+            // include: [{
+            //         model: User,
+            //         attributes: ['username'],
+            //     },
+            //     {
+            //         model: Comment,
+			// 		attributes: ['id', 'art_comment_text', 'art_post_id', 'user_id'],
+            //         include: {
+            //             model: User,
+            //             attributes: ['username'],
+            //         },
+            //     },
+            // ],
         })
         .then((dbPostData) => {
             if (!dbPostData) {
@@ -66,7 +68,8 @@ router.get('/:id', (req, res) => {
         });
 });
 
-
+//create art post
+//relative path = /api/artpost (works)
 router.post('/', withAuth, (req, res) => {
     console.log('creating');
     ArtPost.create({
@@ -81,8 +84,8 @@ router.post('/', withAuth, (req, res) => {
         });
 });
 
-
-
+//updates art post by id
+//relative path = /api/artpost/:id (works)
 router.put('/:id', withAuth, (req, res) => {
     ArtPost.update({
             art_title: req.body.art_title,
@@ -108,7 +111,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 
-
+//relative path = /api/artpost/:id (works)
 router.delete('/:id', withAuth, (req, res) => {
     ArtPost.destroy({
             where: {

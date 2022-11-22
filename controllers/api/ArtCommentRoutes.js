@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 
 //get all comments
-//realtive path = api/ArtComment/
+//realtive path = api/artcomment/
 router.get("/", (req, res) => {
     ArtComment.findAll()
         .then((dbCommentData) => res.json(dbCommentData))
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 });
 
 //get all comments
-//realtive path = api/ArtComment/
+//realtive path = api/artcomment/
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
         ArtComment.create({

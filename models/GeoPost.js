@@ -27,15 +27,17 @@ GeoPost.init({
     user_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'user',
+            model: 'User',
             key: 'id'
-        }
+        },
+        onUpdate: 'cascade',
+		onDelete: 'cascade'
     }
 }, {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'geoPost'
+    modelName: 'GeoPost'
 })
 
 module.exports = GeoPost;
