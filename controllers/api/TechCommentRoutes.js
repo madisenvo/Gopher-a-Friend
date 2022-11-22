@@ -3,18 +3,32 @@ const { TechComment } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 
-//post new comment
+//get all comments
 //realtive path = api/TechComment/
-router.post('/', async (req, res) => {
-try {
-    const newTechComment = await TechComment.create({
-    ...req.body,
-    user_id: req.session.user_id,
-    });
-    res.json(newTechComment);
-} catch (err) {
-    res.status(500).json(err);
-}
+router.get("/", (req, res) => {
+    TechComment.findAll()
+        .then((dbCommentData) => res.json(dbCommentData))
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+//get all comments
+//realtive path = api/TechComment/
+router.post('/', withAuth, (req, res) => {
+    if (req.session) {
+        TechComment.create({
+                tech_comment_text: req.body.tech_comment_text,
+                tech_post_id: req.body.tech_post_id,
+                user_id: req.session.user_id
+            })
+            .then(dbCommentData => res.json(dbCommentData))
+            .catch(err => {
+                console.log(err);
+                res.status(400).json(err);
+            });
+    }
 });
 
 module.exports = router;
