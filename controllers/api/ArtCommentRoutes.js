@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { ArtComment } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 
 //get all comments
