@@ -25,13 +25,6 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [4],
-      },
-    },
     grade: {
       type: DataTypes.INTEGER,
       allowNull: false,
