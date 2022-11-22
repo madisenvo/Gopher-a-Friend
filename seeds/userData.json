@@ -2,16 +2,28 @@
   {
     "name": "Sal",
     "username": "sal",
-    "password": "password12345"
+    "grade": "5",
+    "animal": "axolotl",
+    "color": "blue",
+    "food": "spaghetti",
+    "password": "1234"
   },
   {
     "name": "Lernantino",
     "username": "lernantino",
-    "password": "password12345"
+    "grade": "4",
+    "animal": "panda",
+    "color": "green",
+    "food": "pizza",
+    "password": "1234"
   },
   {
     "name": "Amiko",
     "username": "amiko",
-    "password": "password12345"
+    "grade": "4",
+    "animal": "zebra",
+    "color": "orange",
+    "food": "ramen",
+    "password": "1234"
   }
 ]

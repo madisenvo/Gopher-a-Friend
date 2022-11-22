@@ -1,0 +1,51 @@
+body {
+    background-color: yellow;
+    background-image: url(../images/loginBackgroundImg.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    overflow:scroll;
+}
+
+h1 {
+    text-align: left;
+    font-size: 6rem;
+    color: red;
+}
+
+    .external {
+        display: table;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            height: 100%;
+            width: 100%;
+    }
+        .middle{
+            display: table-cell;
+            vertical-align: middle;
+        }
+            .internal {
+                margin-left: auto;
+                margin-right: auto;
+                width:fit-content;
+                text-align: center;
+                color: blue;
+                font-size: xx-large;
+
+            }
+
+                .input {
+                    background-color: rgb(250, 86, 86);
+                    color: black;
+                }
+
+                .loginBtn {
+                    background-color: greenyellow;
+
+                }
+
+                .signupBtn {
+                    background-color: green;
+                }
