@@ -7,7 +7,7 @@ const withAuth = require('../../utils/auth');
 //realtive path = api/TechComment/
 router.get("/", (req, res) => {
     TechComment.findAll()
-        .then((dbCommentData) => res.json(dbCommentData))
+        .then((commentData) => res.json(commentData))
         .catch((err) => {
             console.log(err);
             res.status(500).json(err);
@@ -23,7 +23,7 @@ router.post('/', withAuth, (req, res) => {
                 tech_post_id: req.body.tech_post_id,
                 user_id: req.session.user_id
             })
-            .then(dbCommentData => res.json(dbCommentData))
+            .then(commentData => res.json(commentData))
             .catch(err => {
                 console.log(err);
                 res.status(400).json(err);

@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
                 },
             ],
         })
-        .then((dbPostData) => res.json(dbPostData))
+        .then((postData) => res.json(postData))
         .catch((err) => {
             console.log(err);
             res.status(500).json(err);
@@ -51,14 +51,14 @@ router.get('/:id', (req, res) => {
                 },
             ],
         })
-        .then((dbPostData) => {
-            if (!dbPostData) {
+        .then((postData) => {
+            if (!postData) {
                 res.status(404).json({
                     message: 'Post NOT found with this id'
                 });
                 return;
             }
-            res.json(dbPostData);
+            res.json(postData);
         })
         .catch((err) => {
             console.log(err);
@@ -74,7 +74,7 @@ router.post('/', withAuth, (req, res) => {
             tech_text: req.body.tech_text,
             user_id: req.session.user_id
         })
-        .then((dbPostData) => res.json(dbPostData))
+        .then((postData) => res.json(postData))
         .catch((err) => {
             console.log(err);
             res.status(500).json(err);
@@ -92,14 +92,14 @@ router.put('/:id', withAuth, (req, res) => {
                 id: req.params.id,
             },
         })
-        .then((dbPostData) => {
-            if (!dbPostData) {
+        .then((postData) => {
+            if (!postData) {
                 res.status(404).json({
                     message: 'Post NOT found with this id'
                 });
                 return;
             }
-            res.json(dbPostData);
+            res.json(postData);
         })
         .catch((err) => {
             console.log(err);
@@ -115,14 +115,14 @@ router.delete('/:id', withAuth, (req, res) => {
                 id: req.params.id,
             },
         })
-        .then((dbPostData) => {
-            if (!dbPostData) {
+        .then((postData) => {
+            if (!postData) {
                 res.status(404).json({
                     message: 'Post NOT found with this id'
                 });
                 return;
             }
-            res.json(dbPostData);
+            res.json(postData);
         })
         .catch((err) => {
             console.log(err);
