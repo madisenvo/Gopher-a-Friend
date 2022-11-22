@@ -1,26 +1,27 @@
 const router = require('express').Router();
-const { GeoComment, GeoPost, User } = require('../../models');
+const { TechComment, TechPost, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
+//find all tech posts
+// realtive path = /api/techpost
 router.get('/', (req, res) => {
-    GeoPost.findAll({
-            attributes: ['id', 'geo_text', 'geo_title'],
-            order: [
-                ['DESC']
-            ],
+    TechPost.findAll({
+            attributes: ['id', 'tech_text', 'tech_title'],
+            // order: [
+            //     ['DESC']
+            // ],
             include: [{
                     model: User,
                     attributes: ['username'],
                 },
-                {
-                    model: Comment,
-                    attributes: ['id', 'art_comment_text', 'geo_post_id', 'user_id'],
-                    include: {
-                        model: User,
-                        attributes: ['username'],
-                    },
-                },
+                // {
+                //     model: Comment,
+                //     attributes: ['id', 'art_comment_text', 'geo_post_id', 'user_id'],
+                //     include: {
+                //         model: User,
+                //         attributes: ['username'],
+                //     },
+                // },
             ],
         })
         .then((dbPostData) => res.json(dbPostData))
@@ -30,25 +31,26 @@ router.get('/', (req, res) => {
         });
 });
 
-
+//finds tech post by id 
+//relative path = /api/techpost/:id (works)
 router.get('/:id', (req, res) => {
-    GeoPost.findOne({
+    TechPost.findOne({
             where: {
                 id: req.params.id,
             },
-            attributes: ['id', 'geo_text', 'geo_title'],
+            attributes: ['id', 'tech_text', 'tech_title'],
             include: [{
                     model: User,
                     attributes: ['username'],
                 },
-                {
-                    model: Comment,
-					attributes: ['id', 'geo_comment_text', 'geo_post_id', 'user_id'],
-                    include: {
-                        model: User,
-                        attributes: ['username'],
-                    },
-                },
+                // {
+                //     model: Comment,
+				// 	attributes: ['id', 'geo_comment_text', 'geo_post_id', 'user_id'],
+                //     include: {
+                //         model: User,
+                //         attributes: ['username'],
+                //     },
+                // },
             ],
         })
         .then((dbPostData) => {
@@ -66,12 +68,13 @@ router.get('/:id', (req, res) => {
         });
 });
 
-
+//create tech post
+//relative path = /api/techpost (works)
 router.post('/', withAuth, (req, res) => {
     console.log('creating');
-    GeoPost.create({
-            geo_title: req.body.geo_title,
-            geo_text: req.body.geo_text,
+    TechPost.create({
+            tech_title: req.body.tech_title,
+            tech_text: req.body.tech_text,
             user_id: req.session.user_id
         })
         .then((dbPostData) => res.json(dbPostData))
@@ -82,11 +85,12 @@ router.post('/', withAuth, (req, res) => {
 });
 
 
-
+//update techpost by id
+//relative path = /api/techpost/:id (works)
 router.put('/:id', withAuth, (req, res) => {
-    GeoPost.update({
-            geo_title: req.body.geo_title,
-            geo_text: req.body.geo_text,
+    TechPost.update({
+            tech_title: req.body.tech_title,
+            tech_text: req.body.tech_text,
         }, {
             where: {
                 id: req.params.id,
@@ -108,9 +112,10 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 
-
+//delete tech post by id
+//relative path = /api/techpost/:id (works)
 router.delete('/:id', withAuth, (req, res) => {
-    GeoPost.destroy({
+    TechPost.destroy({
             where: {
                 id: req.params.id,
             },
