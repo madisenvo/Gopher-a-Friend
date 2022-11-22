@@ -69,8 +69,8 @@ router.get("/:id", (req, res) => {
 router.post("/", withAuth, (req, res) => {
     console.log("creating");
     GeoPost.create({
-            title: req.body.geo_title,
-            content: req.body.geo_text,
+            geo_title: req.body.geo_title,
+            geo_text: req.body.geo_text,
             user_id: req.session.user_id
         })
         .then((postData) => res.json(postData))
@@ -82,8 +82,8 @@ router.post("/", withAuth, (req, res) => {
 
 router.put("/:id", withAuth, (req, res) => {
     GeoPost.update({
-            title: req.body.geo_title,
-            content: req.body.geo_text,
+            geo_title: req.body.geo_title,
+            geo_text: req.body.geo_text,
         }, {
             where: {
                 id: req.params.id,
