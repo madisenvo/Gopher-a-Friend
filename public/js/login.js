@@ -27,12 +27,16 @@ const signupFormHandler = async (event) => {
 
   const name = document.querySelector('#name-signup').value.trim();
   const username = document.querySelector('#username-signup').value.trim();
+  const grade = document.querySelector('#grade-signup').value.trim();
+  const animal = document.querySelector('#animal-signup').value.trim();
+  const color = document.querySelector('#color-signup').value.trim();
+  const food = document.querySelector('#food-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-  if (name && username && password) {
-    const response = await fetch('/api/users', {
+  if (name && username && grade && animal && color && food && password) {
+    const response = await fetch('/api/user', {
       method: 'POST',
-      body: JSON.stringify({ name, username, password }),
+      body: JSON.stringify({ name, username, grade, animal, color, food, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 

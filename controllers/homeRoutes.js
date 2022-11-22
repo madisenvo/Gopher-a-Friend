@@ -44,15 +44,15 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-//sign up page creates login otherwise redirect to home
-// router.get('/signup', (req, res) => {
-// 	if (req.session.logged_in) {
-//     console.log(req.session.logged_in);
-// 	res.redirect('/');
-// 	return;
-// 	}
+// sign up page creates login otherwise redirect to home
+router.get('/signup', (req, res) => {
+	if (req.session.logged_in) {
+    console.log(req.session.logged_in);
+	res.redirect('/');
+	return;
+	}
 
-// 	res.render('signup');
-// });
+	res.render('signup');
+});
 
 module.exports = router;
