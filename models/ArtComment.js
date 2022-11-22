@@ -4,13 +4,13 @@ const sequelize = require('../config/connection');
 class ArtComment extends Model {}
 
 ArtComment.init({
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
-    },
-    art_comment_text: {
+    // id: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false,
+    //     primaryKey: true,
+    //     autoIncrement: true
+    // },
+    artCommentText: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -21,23 +21,27 @@ ArtComment.init({
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'user',
+            model: 'User',
             key: 'id'
-        }
+        },
+        onUpdate: 'cascade',
+		onDelete: 'cascade'
     },
-    art_post_id: {
+    artPostId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'artPost',
+            model: 'ArtPost',
             key: 'id'
-        }
+        },
+        onUpdate: 'cascade',
+		onDelete: 'cascade'
     }
 }, {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'artComment'
+    modelName: 'ArtComment'
 })
 
 

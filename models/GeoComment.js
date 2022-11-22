@@ -21,23 +21,27 @@ GeoComment.init({
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'user',
+            model: 'User',
             key: 'id'
-        }
+        },
+        onUpdate: 'cascade',
+		onDelete: 'cascade'
     },
     geo_post_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'geoPost',
+            model: 'GeoPost',
             key: 'id'
-        }
+        },
+        onUpdate: 'cascade',
+		onDelete: 'cascade'
     }
 }, {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'geoComment'
+    modelName: 'GeoComment'
 })
 
 

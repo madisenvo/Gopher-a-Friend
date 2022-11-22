@@ -3,6 +3,7 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
+//render homepage (works)
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', {
@@ -13,7 +14,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
+// Use withAuth middleware to prevent access to route (works)
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -32,6 +33,7 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+//works
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -41,5 +43,16 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+//sign up page creates login otherwise redirect to home
+// router.get('/signup', (req, res) => {
+// 	if (req.session.logged_in) {
+//     console.log(req.session.logged_in);
+// 	res.redirect('/');
+// 	return;
+// 	}
+
+// 	res.render('signup');
+// });
 
 module.exports = router;

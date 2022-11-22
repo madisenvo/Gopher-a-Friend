@@ -2,17 +2,34 @@ const router = require('express').Router();
 const { TechComment, TechPost, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
+//find all tech posts
+// realtive path = /api/techpost
 router.get('/', (req, res) => {
     TechPost.findAll({
             attributes: ['id', 'tech_text', 'tech_title'],
+
+            // order: [
+            //     ['DESC']
+            // ],
+
             order: [
                 ['DESC']
             ],
+
             include: [{
                     model: User,
                     attributes: ['username'],
                 },
+
+                // {
+                //     model: Comment,
+                //     attributes: ['id', 'art_comment_text', 'geo_post_id', 'user_id'],
+                //     include: {
+                //         model: User,
+                //         attributes: ['username'],
+                //     },
+                // },
+
                 {
                     model: Comment,
                     attributes: ['id', 'art_comment_text', 'tech_post_id', 'user_id'],
@@ -21,6 +38,7 @@ router.get('/', (req, res) => {
                         attributes: ['username'],
                     },
                 },
+
             ],
         })
         .then((postData) => res.json(postData))
@@ -30,7 +48,8 @@ router.get('/', (req, res) => {
         });
 });
 
-
+//finds tech post by id 
+//relative path = /api/techpost/:id (works)
 router.get('/:id', (req, res) => {
     TechPost.findOne({
             where: {
@@ -41,6 +60,16 @@ router.get('/:id', (req, res) => {
                     model: User,
                     attributes: ['username'],
                 },
+
+                // {
+                //     model: Comment,
+				// 	attributes: ['id', 'geo_comment_text', 'geo_post_id', 'user_id'],
+                //     include: {
+                //         model: User,
+                //         attributes: ['username'],
+                //     },
+                // },
+
                 {
                     model: Comment,
 					attributes: ['id', 'tech_comment_text', 'tech_post_id', 'user_id'],
@@ -49,6 +78,7 @@ router.get('/:id', (req, res) => {
                         attributes: ['username'],
                     },
                 },
+
             ],
         })
         .then((postData) => {
@@ -66,7 +96,8 @@ router.get('/:id', (req, res) => {
         });
 });
 
-
+//create tech post
+//relative path = /api/techpost (works)
 router.post('/', withAuth, (req, res) => {
     console.log('creating');
     TechPost.create({
@@ -82,7 +113,8 @@ router.post('/', withAuth, (req, res) => {
 });
 
 
-
+//update techpost by id
+//relative path = /api/techpost/:id (works)
 router.put('/:id', withAuth, (req, res) => {
     TechPost.update({
             tech_title: req.body.tech_title,
@@ -108,7 +140,8 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 
-
+//delete tech post by id
+//relative path = /api/techpost/:id (works)
 router.delete('/:id', withAuth, (req, res) => {
     TechPost.destroy({
             where: {

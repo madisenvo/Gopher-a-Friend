@@ -27,15 +27,17 @@ ArtPost.init({
     user_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'user',
+            model: 'User',
             key: 'id'
-        }
+        },
+        onUpdate: 'cascade',
+		onDelete: 'cascade'
     }
 }, {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'artPost'
+    modelName: 'ArtPost'
 })
 
 module.exports = ArtPost;

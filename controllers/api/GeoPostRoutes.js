@@ -2,14 +2,14 @@ const router = require('express').Router();
 const { GeoComment, GeoPost, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
-
-router.get("/", (req, res) => {
+//find all geo posts
+//realtive path = /api/geopost (works)
+router.get('/', (req, res) => {
     GeoPost.findAll({
-            attributes: ["id", "geo_text", "geo_title"],
-            order: [
-                ["DESC"]
-            ],
+            attributes: ['id', 'geo_text', 'geo_title'],
+            // order: [
+            //     ['DESC']
+            // ],
             include: [{
                     model: User,
                     attributes: ["username"],
@@ -31,6 +31,9 @@ router.get("/", (req, res) => {
         });
 });
 
+
+//get geo post by id
+//relative path = /api/geopost/:id (works)
 router.get("/:id", (req, res) => {
     GeoPost.findOne({
             where: {
@@ -66,6 +69,9 @@ router.get("/:id", (req, res) => {
         });
 });
 
+
+//create geo post
+//relative path = /api/geopost (works)
 router.post("/", withAuth, (req, res) => {
     console.log("creating");
     GeoPost.create({
@@ -80,6 +86,8 @@ router.post("/", withAuth, (req, res) => {
         });
 });
 
+//update geopost by id
+//relative path = /api/geopost/:id (works)
 router.put("/:id", withAuth, (req, res) => {
     GeoPost.update({
             geo_title: req.body.geo_title,
@@ -104,6 +112,8 @@ router.put("/:id", withAuth, (req, res) => {
         });
 });
 
+//delete art post by id
+//relative path = /api/geopost/:id (works)
 router.delete("/:id", withAuth, (req, res) => {
     GeoPost.destroy({
             where: {
