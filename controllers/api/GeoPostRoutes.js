@@ -7,9 +7,6 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     GeoPost.findAll({
             attributes: ['id', 'geo_text', 'geo_title'],
-            // order: [
-            //     ['DESC']
-            // ],
             include: [{
                     model: User,
                     attributes: ["username"],
