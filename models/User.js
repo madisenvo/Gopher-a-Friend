@@ -27,6 +27,38 @@ User.init(
       unique: true,
       validate: {
         len: [1],
+      }
+    },
+    grade: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      unique: false,
+      validate: {
+        len: [1],
+      }
+    },
+    animal: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: false,
+      validate: {
+        len: [1],
+      },
+    },
+    color: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: false,
+      validate: {
+        len: [1],
+      },
+    },
+    food: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: false,
+      validate: {
+        len: [1],
       },
     },
     password: {

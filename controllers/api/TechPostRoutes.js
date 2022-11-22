@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { GeoComment, GeoPost, User } = require('../../models');
+const { TechComment, TechPost, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
 router.get('/', (req, res) => {
-    GeoPost.findAll({
-            attributes: ['id', 'geo_text', 'geo_title'],
+    TechPost.findAll({
+            attributes: ['id', 'tech_text', 'tech_title'],
             order: [
                 ['DESC']
             ],
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['id', 'art_comment_text', 'geo_post_id', 'user_id'],
+                    attributes: ['id', 'art_comment_text', 'tech_post_id', 'user_id'],
                     include: {
                         model: User,
                         attributes: ['username'],
@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
                 },
             ],
         })
-        .then((dbPostData) => res.json(dbPostData))
+        .then((postData) => res.json(postData))
         .catch((err) => {
             console.log(err);
             res.status(500).json(err);
@@ -32,18 +32,18 @@ router.get('/', (req, res) => {
 
 
 router.get('/:id', (req, res) => {
-    GeoPost.findOne({
+    TechPost.findOne({
             where: {
                 id: req.params.id,
             },
-            attributes: ['id', 'geo_text', 'geo_title'],
+            attributes: ['id', 'tech_text', 'tech_title'],
             include: [{
                     model: User,
                     attributes: ['username'],
                 },
                 {
                     model: Comment,
-					attributes: ['id', 'geo_comment_text', 'geo_post_id', 'user_id'],
+					attributes: ['id', 'tech_comment_text', 'tech_post_id', 'user_id'],
                     include: {
                         model: User,
                         attributes: ['username'],
@@ -51,14 +51,14 @@ router.get('/:id', (req, res) => {
                 },
             ],
         })
-        .then((dbPostData) => {
-            if (!dbPostData) {
+        .then((postData) => {
+            if (!postData) {
                 res.status(404).json({
                     message: 'Post NOT found with this id'
                 });
                 return;
             }
-            res.json(dbPostData);
+            res.json(postData);
         })
         .catch((err) => {
             console.log(err);
@@ -69,12 +69,12 @@ router.get('/:id', (req, res) => {
 
 router.post('/', withAuth, (req, res) => {
     console.log('creating');
-    GeoPost.create({
-            geo_title: req.body.geo_title,
-            geo_text: req.body.geo_text,
+    TechPost.create({
+            tech_title: req.body.tech_title,
+            tech_text: req.body.tech_text,
             user_id: req.session.user_id
         })
-        .then((dbPostData) => res.json(dbPostData))
+        .then((postData) => res.json(postData))
         .catch((err) => {
             console.log(err);
             res.status(500).json(err);
@@ -84,22 +84,22 @@ router.post('/', withAuth, (req, res) => {
 
 
 router.put('/:id', withAuth, (req, res) => {
-    GeoPost.update({
-            geo_title: req.body.geo_title,
-            geo_text: req.body.geo_text,
+    TechPost.update({
+            tech_title: req.body.tech_title,
+            tech_text: req.body.tech_text,
         }, {
             where: {
                 id: req.params.id,
             },
         })
-        .then((dbPostData) => {
-            if (!dbPostData) {
+        .then((postData) => {
+            if (!postData) {
                 res.status(404).json({
                     message: 'Post NOT found with this id'
                 });
                 return;
             }
-            res.json(dbPostData);
+            res.json(postData);
         })
         .catch((err) => {
             console.log(err);
@@ -110,19 +110,19 @@ router.put('/:id', withAuth, (req, res) => {
 
 
 router.delete('/:id', withAuth, (req, res) => {
-    GeoPost.destroy({
+    TechPost.destroy({
             where: {
                 id: req.params.id,
             },
         })
-        .then((dbPostData) => {
-            if (!dbPostData) {
+        .then((postData) => {
+            if (!postData) {
                 res.status(404).json({
                     message: 'Post NOT found with this id'
                 });
                 return;
             }
-            res.json(dbPostData);
+            res.json(postData);
         })
         .catch((err) => {
             console.log(err);
