@@ -7,21 +7,10 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     ArtPost.findAll({
             attributes: ['id', 'art_text', 'art_title'],
-            // order: [
-            //     ['DESC']
-            // ],
             include: [{
                     model: User,
                     attributes: ['username'],
                 },
-                // {
-                //     model: Comment,
-                //     attributes: ['id', 'art_comment_text', 'art_post_id', 'user_id'],
-                //     include: {
-                //         model: User,
-                //         attributes: ['username'],
-                //     },
-                // },
             ],
         })
         .then((postData) => res.json(postData))
@@ -39,19 +28,6 @@ router.get('/:id', (req, res) => {
                 id: req.params.id,
             },
             attributes: ['id', 'art_text', 'art_title'],
-            // include: [{
-            //         model: User,
-            //         attributes: ['username'],
-            //     },
-            //     {
-            //         model: Comment,
-			// 		attributes: ['id', 'art_comment_text', 'art_post_id', 'user_id'],
-            //         include: {
-            //             model: User,
-            //             attributes: ['username'],
-            //         },
-            //     },
-            // ],
         })
         .then((postData) => {
             if (!postData) {
