@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class GeoComment extends Model {}
 
-Comment.init({
+GeoComment.init({
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
