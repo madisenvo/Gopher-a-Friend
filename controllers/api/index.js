@@ -17,16 +17,16 @@ const ArtCommentRoutes = require('./ArtCommentRoutes');
 router.use('/user', userRoutes);
 
 //Use Geo models for routes
-router.use('/GeoPost', GeoPostRoutes);
-router.use('/GeoComment', GeoCommentRoutes);
+router.use('/geopost', GeoPostRoutes);
+router.use('/geocomment', GeoCommentRoutes);
 
 //Tech model for routes
-router.use('/TechPost', TechPostRoutes);
-router.use('/TechComment', TechCommentRoutes);
+router.use('/techpost', TechPostRoutes);
+router.use('/techcomment', TechCommentRoutes);
 
 //Art model for routes
-router.use('/ArtPost', ArtPostRoutes);
-router.use('/ArtComment', ArtCommentRoutes);
+router.use('/artpost', ArtPostRoutes);
+router.use('/artcomment', ArtCommentRoutes);
 
 
 
