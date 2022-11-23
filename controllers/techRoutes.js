@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { TechPost, TechComment, User} = require('../models');
 
-
+// see all posts
 router.get('/', (req, res) => {
     TechPost.findAll({
             attributes: [
@@ -35,7 +35,8 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/update/:id', withAuth, (req, res) => {
+// update a post
+router.get('/update/:id', (req, res) => {
     TechPost.findOne({
         attributes: [
             'id',
@@ -75,10 +76,5 @@ router.get('/update/:id', withAuth, (req, res) => {
         });
 })
 
-router.get('/new', (req, res) => {
-    res.render('technology', {
-        loggedIn: true
-    })
-})
 
 module.exports = router;

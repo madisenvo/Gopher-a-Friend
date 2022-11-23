@@ -35,4 +35,45 @@ router.get('/', (req, res) => {
         });
 });
 
+// update a post
+router.get('/update/:id', (req, res) => {
+    GeoPost.findOne({
+        attributes: [
+            'id',
+            'geo_title',
+            'geo_text',
+        ],
+        include: [{
+                model: GeoComment,
+                attributes: ['id', 'geo_comment_text', 'geo_post_id', 'user_id'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+        ]
+        })
+        .then(postData => {
+            if (!postData) {
+                res.status(404).json({
+                    message: 'Uh Oh! No post found.'
+                });
+                return;
+            }
+
+            const geoPost = postData.get({
+                plain: true
+            });
+
+            res.render('edit', {
+                geoPost,
+                loggedIn: true
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+})
+
 module.exports = router;
