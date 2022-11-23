@@ -3,7 +3,7 @@ const { ArtComment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-//get all comments
+//get all art comments
 //realtive path = api/artcomment/
 router.get("/", (req, res) => {
     ArtComment.findAll()
@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
         });
 });
 
-//get all comments
+//create an art comment
 //realtive path = api/artcomment/
 router.post('/', withAuth, (req, res) => {
     if (req.session) {

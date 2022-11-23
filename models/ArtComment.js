@@ -10,7 +10,7 @@ ArtComment.init({
     //     primaryKey: true,
     //     autoIncrement: true
     // },
-    artCommentText: {
+    art_comment_text: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -27,7 +27,7 @@ ArtComment.init({
         onUpdate: 'cascade',
 		onDelete: 'cascade'
     },
-    artPostId: {
+    art_post_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
