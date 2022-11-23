@@ -1,0 +1,10 @@
+<a href="/topics" class="go-back"> &larr; Select Another Topic</a>
+
+<ul class="post-list">
+    {{#each techPosts as |post|}}
+    <li>
+        {{> techPosts as post }}
+    </li>
+    {{/each}}
+</ul>
+{{!-- TODO: figure out how to add each post's comments within the #each --}}
