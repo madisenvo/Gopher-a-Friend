@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 
 //get all comments
-//realtive path = api/GeoComment/
+//realtive path = api/geocomment/
 router.get("/", (req, res) => {
     GeoComment.findAll()
         .then((commentData) => res.json(commentData))
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 });
 
 //get all comments
-//realtive path = api/GeoComment/
+//realtive path = api/geocomment/
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
         GeoComment.create({
