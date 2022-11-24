@@ -28,9 +28,4 @@ router.use('/techcomment', TechCommentRoutes);
 router.use('/artpost', ArtPostRoutes);
 router.use('/artcomment', ArtCommentRoutes);
 
-
-
-
 module.exports = router;
-
-// TODO: add any api routes we create (comments, posts, etc)
