@@ -1,8 +1,8 @@
-const commentFormEl = async function(event) {
+const commentTechFormEl = async function(event) {
 	event.preventDefault();
 
-	const tech_post_id = document.querySelector('input[name="post-id"]').value;
-	const tech_body = document.querySelector('textarea[name="post-body"]').value;
+	const tech_post_id = document.querySelector('input[name="tech-post-id"]').value;
+	const tech_body = document.querySelector('textarea[name="tech-post-body"]').value;
 
 	if (body) {
 		await fetch('/api/techcomment', {
@@ -21,5 +21,5 @@ const commentFormEl = async function(event) {
 };
 
 document
-.querySelector('#new-comment-form') //attach form id for tech comment in handlebars
-.addEventListener('submit', commentFormEl);
+.querySelector('#tech-comment-form') //attach form id for tech comment in handlebars
+.addEventListener('submit', commentTechFormEl);

@@ -1,8 +1,8 @@
-const commentFormEl = async function(event) {
+const commentArtFormEl = async function(event) {
 	event.preventDefault();
 
-	const art_post_id = document.querySelector('input[name="post-id"]').value;
-	const art_body = document.querySelector('textarea[name="post-body"]').value;
+	const art_post_id = document.querySelector('input[name="art-post-id"]').value;
+	const art_body = document.querySelector('textarea[name="art-post-body"]').value;
 
 	if (body) {
 		await fetch('/api/artcomment', {
@@ -21,5 +21,5 @@ const commentFormEl = async function(event) {
 };
 
 document
-.querySelector('#new-comment-form') //attach form id for art comment in handlebars
-.addEventListener('submit', commentFormEl);
+.querySelector('#art-comment-form') //attach form id for art comment in handlebars
+.addEventListener('submit', commentArtFormEl);
