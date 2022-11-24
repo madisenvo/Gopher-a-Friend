@@ -42,38 +42,22 @@ align-items: baseline;
                 text-align: center;
                 color: blue;
                 font-size: xx-large;
-.external {
-    display: table;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
+            }
 
-.middle {
-    display: table-cell;
-    vertical-align: middle;
-}
+                .input {
+                    background-color: rgb(250, 86, 86);
+                    color: black;
+                }
 
-.internal {
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
-    text-align: center;
-    color: blue;
-    font-size: xx-large;
-
-}
-
-.input {
-    background-color: rgb(250, 86, 86);
-    color: black;
-}
+                .loginBtn {
+                    background-color: greenyellow;
+                }
 
                 .signupBtn {
                     background-color: green;
                 }
+
+
 
 /* profile.handlebars */
 .topics {
@@ -104,11 +88,3 @@ align-items: baseline;
             height: 300px;
             width: 300px;
         }
-.loginBtn {
-    background-color: greenyellow;
-
-}
-
-.signupBtn {
-    background-color: green;
-}
