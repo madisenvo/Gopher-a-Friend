@@ -1,47 +1,48 @@
-{{!-- first page user sees - TODO: front end: needs formatting - add classes/css --}}
+{{! first page user sees - TODO: front end: needs formatting - add classes/css }}
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gopher a Friend</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+<html lang='en'>
 
-<body>
-  <div class="">
-    <header class="">
-      <h1>
-        <span 
-        {{!-- role="img" aria-label="money">💸 TODO: replace img with gopher --}}
-        </span>
-        <a href="/">Gopher a Friend</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Gopher a Friend</title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+  <body>
+    <div class=''>
+      <header class=''>
+        <h1 class='title'>
+          {{! <span>
+        role="img" aria-label="money">💸 TODO: replace img with gopher
+        </span> }}
+          <a href='/'>Gopher a Friend</a>
+        </h1>
+        <nav class='loginBtn'>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+            <a href='/profile'>profile</a>
+            |
+            <button class='loginBtn' id='logout'>logout</button>
+          {{else}}
+            <a href='/login'>login</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main class=''>
+        <!-- Render the sub layout -->
+        {{{body}}}
+      </main>
+      <footer>
+
+      </footer>
+    </div>
+
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src='/js/logout.js'></script>
+    {{/if}}
+  </body>
 
 </html>

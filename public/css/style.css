@@ -8,7 +8,7 @@ body {
     overflow: scroll;
 }
 
-h1 {
+.title {
     text-align: left;
     font-size: 6rem;
     color: red;
@@ -19,8 +19,12 @@ display: flex;
 align-items: baseline;
 }
 
-    .log{
+    .loginBtn{
         justify-content: end;
+    }
+    
+    .logoutBtn {
+  
     }
 /* login.handlebars */
     .external {
@@ -66,6 +70,10 @@ align-items: baseline;
     justify-content:center;
     flex-wrap:wrap;
     align-items: baseline;
+}
+
+h2{
+    color: rgb(255, 51, 0);
 }
     .topic1{
         align-items: center; /*this does not center the text on the pic*/
