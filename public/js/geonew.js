@@ -4,7 +4,7 @@ const newFormHandler = async (event) => {
 	const geo_title = document.querySelector('input[name="post-title"]').value;
 	const geo_body = document.querySelector('textarea[name="post-body"]').value;
 
-	await fetch(`/api/geopost/${geo_post_id}`, {
+	await fetch("/api/geopost", {
 		method: 'PUT',
 		body: JSON.stringify({
 		geo_title,
@@ -21,5 +21,5 @@ const newFormHandler = async (event) => {
 
 
 document
-.querySelector('#geo-post-form')// add id for new geo post form
+.querySelector('#geo-post-form')
 .addEventListener('submit', newFormHandler);

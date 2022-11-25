@@ -4,7 +4,7 @@ const newFormHandler = async (event) => {
 	const tech_title = document.querySelector('input[name="post-title"]').value;
 	const tech_body = document.querySelector('textarea[name="post-body"]').value;
 
-	await fetch(`/api/techpost/${tech_post_id}`, {
+	await fetch("/api/techpost", {
 		method: 'PUT',
 		body: JSON.stringify({
 		tech_title,
@@ -21,5 +21,5 @@ const newFormHandler = async (event) => {
 
 
 document
-.querySelector('#tech-post-form')// add id for new tech post form
+.querySelector('#tech-post-form')
 .addEventListener('submit', newFormHandler);
