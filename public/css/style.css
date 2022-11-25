@@ -1,16 +1,14 @@
-body {
-    /* background-color: yellow; */
-    background: url(../images/loginBackgroundImg.png), url(../images/chalkboard.jpg);
-    background-size:  50%, 100%;
-    background-repeat: no-repeat, repeat;
-    background-attachment: fixed;
-    background-position: center;
-    overflow: scroll;
+
+    header {
+        background: url(../images/chalkboard.jpg);
+        color: white;
+        margin-top: 0;
+    }
 
 h1 {
-    text-align: left;
+    text-align: center;
     font-size: 8rem;
-    color: red;
+    color: white;
 }
 
     .external {
@@ -49,3 +47,9 @@ h1 {
                 .signupBtn {
                     background-color: green;
                 }
+
+/* maddy fckin around */
+.topic-link{
+    color: black;
+    font-size: large;
+}
