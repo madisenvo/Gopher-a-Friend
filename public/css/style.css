@@ -7,17 +7,7 @@
         width: 100%;
     }
 
-.loginBtn{
-    justify-content: end;
-}
-
-.title {
-    text-align: left;
-    font-size: 8rem;
-    font-size: 6rem;
-    color: red;
-}
-
+    
 
 h1 {
     text-align: center;
@@ -61,6 +51,11 @@ h1 {
                     background-color: green;
                 }
 
+/* maddy fckin around */
+.topic-link{
+    color: black;
+    font-size: large;
+}
 
 /* profile.handlebars */
 .topics {
