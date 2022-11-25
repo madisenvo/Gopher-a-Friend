@@ -4,12 +4,6 @@ const sequelize = require('../config/connection');
 class ArtComment extends Model {}
 
 ArtComment.init({
-    // id: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    //     primaryKey: true,
-    //     autoIncrement: true
-    // },
     art_comment_text: {
         type: DataTypes.STRING,
         allowNull: false,
