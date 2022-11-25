@@ -1,36 +1,48 @@
 
-    header {
-        background: url(../images/chalkboard.jpg);
-        color: white;
-        margin-top: 0;
-        height: 200px;
-        width: 100%;
-    }
-
-h1 {
-    text-align: center;
-    font-size: 8rem;
-    color: white;
+body {
+    background: url(../images/loginBackgroundImg.png), url(../images/chalkboard.jpg);
+    background-size:  50%, 100%;
+    background-repeat: no-repeat, repeat;
+    background-attachment: fixed;
+    background-position: center;
+    overflow: scroll;
 }
 
+.title {
+    text-align: left;
+    font-size: 6rem;
+    color: red;
+}
+
+header{
+display: flex;
+align-items: baseline;
+}
+
+    .loginBtn{
+        justify-content: end;
+    }
+    
+    .logoutBtn {
+  
+    }
+/* login.handlebars */
     .external {
         display: table;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        height: 100%;
-        width: 100%;
+            position: absolute;
+            top: 180px;
+            left: 0;
+            height: 100%;
+            width: 100%;
     }
-
-        .middle {
+        .middle{
             display: table-cell;
             vertical-align: middle;
         }
-
             .internal {
                 margin-left: auto;
                 margin-right: auto;
-                width: fit-content;
+                width:fit-content;
                 text-align: center;
                 color: blue;
                 font-size: xx-large;
@@ -43,15 +55,45 @@ h1 {
 
                 .loginBtn {
                     background-color: greenyellow;
-
                 }
 
                 .signupBtn {
                     background-color: green;
                 }
 
-/* maddy fckin around */
-.topic-link{
-    color: black;
-    font-size: large;
+
+
+
+/* profile.handlebars */
+.topics {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap:wrap;
+    align-items: baseline;
 }
+
+h2{
+    color: rgb(255, 51, 0);
+}
+    .topic1{
+        align-items: center; /*this does not center the text on the pic*/
+    }
+        #art{
+            height: 300px;
+            width: 300px;
+        }
+    .topic2{
+        align-items: center;
+    }
+        #geography{
+            height: 300px;
+            width: 300px;
+        }
+    .topic3{
+        align-items: center;
+    }
+        #tech{
+            height: 300px;
+            width: 300px;
+        }
