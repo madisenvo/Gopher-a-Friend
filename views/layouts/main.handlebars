@@ -1,14 +1,14 @@
-{{! first page user sees - TODO: front end: needs formatting - add classes/css }}
+{{!-- first page user sees - TODO: front end: needs formatting - add classes/css --}}
 
+<!DOCTYPE html>
+<html lang="en">
 
-<html lang='en'>
-
-  <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Gopher a Friend</title>
-    <link rel='stylesheet' href='/css/style.css' />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gopher a Friend</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 
 <body>
     <header style="position: relative; top: -90px;">
@@ -39,10 +39,12 @@
       </p>
     </footer>
 
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-      <script src='/js/logout.js'></script>
-    {{/if}}
-  </body>
+
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
 
 </html>
