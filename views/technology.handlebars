@@ -4,16 +4,32 @@
     <div class="">
         <ul class="post-list">
             <li>
-                {{#each techPosts as |techPost|}}
-                    {{> techPosts as techPost }}
-                        {{#if techPost.TechComment}}
+                {{#each techPosts}}
+                    <article class="">
+                        <div class="">
+                            <div class="">
+                                <div class="">
+                                    <a href="/techpost/{{id}}" class="links">{{tech_title}}</a>
+                                </div>
+                                <div class="">
+                                    <p id="">
+                                        Posted By <b>{{user.username}} </b>
+                                    </p>
+            </div>
+        </div>
+        <div class="">
+            <p>{{tech_text}}</p>
+        </div>
+    </div>
+</article>
+                        {{!-- {{#if techPost.TechComment}}
                             <div class="comments">
                                 {{#each this}}
                                     <section class="comment">
                                         {{> techComments }}
                                 {{/each}}
                             </div>
-                        {{/if}}
+                        {{/if}} --}}
                 {{/each}}
             </li>
         </ul>
@@ -33,7 +49,7 @@
                 </div>
                 <div class="post-content">
                     <label for="post-content">Content</label>
-                    <textarea class="entry-field" id="post-content" name="post-content"></textarea>
+                    <textarea class="entry-field" id="post-body" name="post-content"></textarea>
                 </div>
                 <button type="submit" class="btn">Create</button>
             </form>

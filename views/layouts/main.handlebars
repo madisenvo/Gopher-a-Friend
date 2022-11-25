@@ -13,11 +13,11 @@
 <body>
     <header style="position: relative; top: -90px;">
       <h1>Gopher a Friend</h1>
-      <nav style="position: relative; bottom: 0">
+      <nav class="loginBtn">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">Profile</a> |
-        <button class="" id="logout">Logout</button>
+        <button class="loginBtn" id="logout">Logout</button>
         {{else}}
         <a href="/login">login</a>
         {{/if}}
