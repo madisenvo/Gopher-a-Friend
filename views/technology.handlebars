@@ -1,28 +1,24 @@
-<a href="/topics" class="go-back"> &larr; Select Another Topic</a>
+<a href="/profile" class="go-back"> &larr; Return to Profile </a>
 
 <section class="">
     <div class="">
         <ul class="post-list">
-            {{#each techPosts as |post|}}
             <li>
-                {{> techPosts as post }}
-            </li>
+                {{#each techPosts as |post|}}
+                    {{> techPosts as post }}
+                        {{#if post.TechComment}}
+                            <div class="comments">
+                                {{#each this}}
+                                    <section class="comment">
+                                        {{> techComments post.comments}}
+                                {{/each}}
+                            </div>
+                        {{/if}}
                 {{/each}}
+            </li>
         </ul>
-
     </div>
 </section>
-
-{{!-- TODO: figure out how to add each post's comments within the #each --}}
-{{#if post.TechComment}}
-<div class="comments">
-    {{#each this}}
-    <section class="comment">
-{{> techComments post.comments}}
-    {{/each}}
-{{/if}}
-</div>
-
 
 <article class="">
     <section class="">
