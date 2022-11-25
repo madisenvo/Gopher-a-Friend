@@ -1,10 +1,44 @@
-<a href="/topics" class="go-back"> &larr; Select Another Topic</a>
+<a href="/profile" class="go-back"> &larr; Return to Profile </a>
 
-<ul class="post-list">
-    {{#each techPosts as |post|}}
-    <li>
-        {{> techPosts as post }}
-    </li>
-    {{/each}}
-</ul>
-{{!-- TODO: figure out how to add each post's comments within the #each --}}
+<section class="">
+    <div class="">
+        <ul class="post-list">
+            <li>
+                {{#each techPosts as |techPost|}}
+                    {{> techPosts as techPost }}
+                        {{#if techPost.TechComment}}
+                            <div class="comments">
+                                {{#each this}}
+                                    <section class="comment">
+                                        {{> techComments }}
+                                {{/each}}
+                            </div>
+                        {{/if}}
+                {{/each}}
+            </li>
+        </ul>
+    </div>
+</section>
+
+<article class="">
+    <section class="">
+        <div class="">
+            <h2>Create New Post</h2>
+        </div>
+        <div class="">
+            <form class="tech-post-form">
+                <div class="">
+                    <label for="post-title">Title</label>
+                    <input type="text" id="post-title" name="post-title" />
+                </div>
+                <div class="post-content">
+                    <label for="post-content">Content</label>
+                    <textarea class="entry-field" id="post-content" name="post-content"></textarea>
+                </div>
+                <button type="submit" class="btn">Create</button>
+            </form>
+        </div>
+    </section>
+</article>
+
+<script src="/js/technew.js"></script>

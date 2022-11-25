@@ -2,14 +2,14 @@ const router = require('express').Router();
 
 const apiRoutes = require('./api');
 const homeRoutes = require('./homeRoutes');
-const geoRoutes = require('./geoRoutes');
-const artRoutes = require('./artRoutes');
-const techRoutes = require('./techRoutes');
+const geoDashboard = require('./geoDashboard');
+const artDashboard = require('./artDashboard');
+const techDashboard = require('./techDashboard');
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-router.use('/geography', geoRoutes);
-router.use('/art', artRoutes);
-router.use('/technology', techRoutes);
+router.use('/geography', geoDashboard);
+router.use('/art', artDashboard);
+router.use('/technology', techDashboard);
 
 module.exports = router;
