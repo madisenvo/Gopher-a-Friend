@@ -4,12 +4,12 @@ const sequelize = require('../config/connection');
 class GeoComment extends Model {}
 
 GeoComment.init({
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
-    },
+    // id: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false,
+    //     primaryKey: true,
+    //     autoIncrement: true
+    // },
     geo_comment_text: {
         type: DataTypes.STRING,
         allowNull: false,
