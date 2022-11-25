@@ -3,9 +3,26 @@
     <h2>Welcome, {{name}}!</h2>
   </div>
 
-  <a href="/geography" class="topic-link"> Geography</a>
-  <a href="/technology" class="topic-link"> Technology</a>
-  <a href="/art" class="topic-link"> The Arts</a>
+    <div class='topics'>
+    <div id='topic1'>
+      <a href="/art">
+        <h2>The Arts</h2>
+        <img src='../public/images/artGopher.png' id='art' />
+      </a>
+    </div>
+    <div id='topic2'>
+      <a href="/geography">
+        <h2>Geography</h2>
+        <img src='../public/images/geographyGopher.png' id='geography' />
+      </a>
+      <div id='topic3'>
+        <a href="/technology">
+          <h2>Technology</h2>
+          <img src='../public/images/techGopher.png' id='tech' />
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
 {{!-- this page is displayed directly after login. TODO: front end: add in user data & make cute, add button to navigate to chatroom selection - create & connect to corresponding js file via script tag - back end: add routes file in controllers--}}
