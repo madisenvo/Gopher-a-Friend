@@ -1,6 +1,8 @@
 
 body {
+    background-color: yellow;
     background: url(../images/loginBackgroundImg.png), url(../images/chalkboard.jpg);
+    
     background-size:  50%, 100%;
     background-repeat: no-repeat, repeat;
     background-attachment: fixed;
