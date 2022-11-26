@@ -207,11 +207,17 @@ h1 {
     float: right;
     padding-right: 200px;
 }
+.name-post {
+    font-family: 'Butterfly Kids', cursive;
+    font-size: 40px;
+    font-weight: bold;
+}
 
 .posts{
     float: left;
-    padding-left: 300px;
+    padding-left: 100px;
 }
+
 /* profile.handlebars */
 .topics {
     display: flex;
@@ -250,3 +256,7 @@ h2{
             height: 300px;
             width: 300px;
         }
+
+.go-back {
+    font-family: 'Fredericka the Great';
+}
