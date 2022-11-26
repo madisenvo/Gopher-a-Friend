@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { TechPost, TechComment, User} = require('../models');
 
 // see all posts
-//relative path = /art
+//relative path = /technology
 router.get('/', (req, res) => {
     TechPost.findAll({
             attributes: [
