@@ -21,5 +21,5 @@ const commentTechFormEl = async function(event) {
 };
 
 document
-.querySelector('#tech-comment-form') //attach form id for tech comment in handlebars
+.querySelector('#tech-comment-form')
 .addEventListener('submit', commentTechFormEl);
