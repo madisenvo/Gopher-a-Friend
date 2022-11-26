@@ -14,6 +14,11 @@ header {
         width: 100%;
     }
 
+.go-back {
+        color:rgb(77, 61, 186);
+        vertical-align: text-top;
+    }
+
 .login{
     display: flex;
     float: left;
@@ -101,11 +106,6 @@ ul{
     font-family: 'Butterfly Kids', cursive;
     font-size: 50px;
     font-weight: bold;
-}
-
-.user-text {
-    font-family: 'Fredericka the Great';
-    font-size: 20px;
 }
 
 
@@ -253,10 +253,20 @@ h1 {
     float: right;
     padding-right: 200px;
 }
+
+
 .name-post {
     font-family: 'Butterfly Kids', cursive;
     font-size: 40px;
     font-weight: bold;
+    color: rgb(77, 61, 186);
+    background-color: #e299cb;
+}
+
+.user-text {
+    font-family: 'Fredericka the Great';
+    font-size: 20px;
+    background-color: #4e9af1;
 }
 
 .posts{
