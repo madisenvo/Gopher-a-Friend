@@ -3,16 +3,12 @@ const art_id = window.location.toString().split('/')[window.location.toString().
 const editArtFormHandler = async (event) => {
 	event.preventDefault();
 
-	const art_title = document.querySelector('input[name="art-post-title"]').value;
 	const art_text = document.querySelector('textarea[name="art-post-body"]').value;
 
-	if (art_text && art_title) {
+	if (art_text) {
 		const response = await fetch(`/api/artpost/${art_id}`, {
 		method: 'PUT',
-		body: JSON.stringify({
-		art_title,
-		art_text
-	}),
+		body: JSON.stringify({art_text}),
 		headers: {
 		'Content-Type': 'application/json'
 		}

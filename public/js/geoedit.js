@@ -3,16 +3,12 @@ const geo_id = window.location.toString().split('/')[window.location.toString().
 const editGeoFormHandler = async (event) => {
 	event.preventDefault();
 
-	const geo_title = document.querySelector('input[name="geo-post-title"]').value;
 	const geo_text = document.querySelector('textarea[name="geo-post-body"]').value;
 
-	if (geo_text && geo_title) {
+	if (geo_text) {
 		const response = await fetch(`/api/geopost/${geo_id}`, {
 		method: 'PUT',
-		body: JSON.stringify({
-		geo_title,
-		geo_text
-	}),
+		body: JSON.stringify({geo_text}),
 		headers: {
 		'Content-Type': 'application/json'
 		}
