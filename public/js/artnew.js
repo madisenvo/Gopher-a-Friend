@@ -5,7 +5,7 @@ const newFormHandler = async (event) => {
 	const art_body = document.querySelector('textarea[name="art-post-body"]').value;
 
 	await fetch("/api/artpost", {
-		method: 'PUT',
+		method: 'POST',
 		body: JSON.stringify({
 		art_title,
 		art_body
