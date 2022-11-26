@@ -99,7 +99,25 @@ h1 {
     color: white;
 }
 
+.signup{
+    float: right;
+    padding-right: 300px;
+}
 
+.login{
+    float: left;
+    padding-left: 300px;
+}
+
+.createPost{
+    float: right;
+    padding-right: 200px;
+}
+
+.posts{
+    float: left;
+    padding-left: 300px;
+}
 /* profile.handlebars */
 .topics {
     display: flex;
