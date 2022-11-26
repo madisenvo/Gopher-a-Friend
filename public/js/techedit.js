@@ -26,7 +26,7 @@ const editTechFormHandler = async (event) => {
 
 
 const delTechButtonHandler = async (event) => {
-	if (event.target.hasAttribute('tech-data-id')) {
+	event.preventDefault();
 	const tech_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
 	const response = await fetch(`/api/techpost/${tech_id}`, {
@@ -37,7 +37,6 @@ const delTechButtonHandler = async (event) => {
 		document.location.replace('/technology');
 	} else {
 		alert('Failed to delete post!');
-	}
 	}
 };
 
