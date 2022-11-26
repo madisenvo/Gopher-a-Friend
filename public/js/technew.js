@@ -4,6 +4,7 @@ const newFormHandler = async (event) => {
 	const tech_title = document.querySelector('input[name="post-title"]').value;
 	const tech_text = document.querySelector('textarea[name="post-body"]').value;
 
+
 	await fetch("/api/techpost", {
 		method: 'PUT',
 		body: JSON.stringify({
