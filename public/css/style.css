@@ -297,6 +297,8 @@ h2{
         #art{
             height: 300px;
             width: 300px;
+            background-color: black;
+            margin: 0 10px 0 10px;
         }
     .topic2{
         align-items: center;
@@ -304,6 +306,8 @@ h2{
         #geography{
             height: 300px;
             width: 300px;
+            background-color: black;
+            margin: 0 10px 0 10px;
         }
     .topic3{
         align-items: center;
@@ -311,6 +315,8 @@ h2{
         #tech{
             height: 300px;
             width: 300px;
+            background-color: black;
+            margin: 0 10px 0 10px;
         }
 
 .go-back {
