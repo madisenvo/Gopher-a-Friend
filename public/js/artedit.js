@@ -1,18 +1,17 @@
-const art_id = document.querySelector('input[name="art-post-id"]').value;
+const art_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
 const editArtFormHandler = async (event) => {
 	event.preventDefault();
 
 	const art_title = document.querySelector('input[name="art-post-title"]').value;
-	const art_body = document.querySelector('textarea[name="art-post-body"]').value;
+	const art_text = document.querySelector('textarea[name="art-post-body"]').value;
 
-	if (art_body && art_title) {
+	if (art_text && art_title) {
 		const response = await fetch(`/api/artpost/${art_id}`, {
 		method: 'PUT',
-		art_body: JSON.stringify({
+		body: JSON.stringify({
 		art_title,
-		body
-		//not sure if body above should be art_body
+		art_text
 	}),
 		headers: {
 		'Content-Type': 'application/json'
@@ -21,15 +20,15 @@ const editArtFormHandler = async (event) => {
 	if (response.ok) {
 		document.location.replace('/art');
 	} else {
-		alert('Failed to delete project');
+		alert('Failed to update post');
 	}
 	}
 };
 
 
 const delArtButtonHandler = async (event) => {
-	if (event.target.hasAttribute('art-data-id')) {
-	const art_id = event.target.getAttribute('art-data-id');
+	event.preventDefault();
+	const art_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
 	const response = await fetch(`/api/artpost/${art_id}`, {
 		method: 'DELETE',
@@ -38,8 +37,7 @@ const delArtButtonHandler = async (event) => {
 	if (response.ok) {
 		document.location.replace('/art');
 	} else {
-		alert('Failed to delete project');
-	}
+		alert('Failed to delete post');
 	}
 };
 

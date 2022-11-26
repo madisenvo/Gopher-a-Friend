@@ -1,45 +1,32 @@
 <a href="/profile" class="go-back"> &larr; Return to Profile </a>
 
+
 <section class="">
     <div class="">
         <ul class="post-list">
-
-            {{!-- <li>
+            <li>
                 {{#each artPosts as |artPost|}}
-                    {{> artPosts as artPost }}
-                        {{#if artPost.ArtComment}}
-
-                            <div class="comments">
-                                {{#each this}}
-                                    <section class="comment">
-                                        {{> artComments }}
-                                {{/each}}
-                            </div>
-                        {{/if}}
+                    {{> artPosts artPost}}
                 {{/each}}
-
-            </li> --}}
-
-        </ul>
+            </li>
+        </ul>   
     </div>
 </section>
 
 <article class="">
     <section class="">
         <div class="">
-            <h2>Create New Art Post</h2>
+            <h2>Create a Post</h2>
         </div>
         <div class="">
             <form id = "art-post-form" class="art-post-form">
-
-
                 <div class="">
                     <label for="post-title">Title</label>
-                    <input type="text" id="post-title" name="post-title" />
+                    <input type="text" id="post-title" name="art-post-title" />
                 </div>
                 <div class="post-content">
                     <label for="post-content">Content</label>
-                    <textarea class="entry-field" id="post-content" name="post-content"></textarea>
+                    <textarea class="entry-field" id="post-body" name="art-post-body"></textarea>
                 </div>
                 <button type="submit" class="btn">Create</button>
             </form>

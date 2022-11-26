@@ -1,18 +1,16 @@
-const tech_id = document.querySelector('input[name="tech-post-id"]').value;
+const tech_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
 const editTechFormHandler = async (event) => {
 	event.preventDefault();
-
 	const tech_title = document.querySelector('input[name="tech-post-title"]').value;
-	const tech_body = document.querySelector('textarea[name="tech-post-body"]').value;
+	const tech_text = document.querySelector('textarea[name="tech-post-body"]').value;
 
-	if (tech_body && tech_title) {
+	if (tech_text && tech_title) {
 		const response = await fetch(`/api/techpost/${tech_id}`, {
 		method: 'PUT',
-		tech_body: JSON.stringify({
+		body: JSON.stringify({
 		tech_title,
-		body
-		//not sure if body above should be tech_body
+		tech_text
 	}),
 		headers: {
 		'Content-Type': 'application/json'
@@ -21,15 +19,15 @@ const editTechFormHandler = async (event) => {
 	if (response.ok) {
 		document.location.replace('/technology');
 	} else {
-		alert('Failed to delete project');
+		alert('Failed to update post!');
 	}
 	}
 };
 
 
 const delTechButtonHandler = async (event) => {
-	if (event.target.hasAttribute('tech-data-id')) {
-	const tech_id = event.target.getAttribute('tech-data-id');
+	event.preventDefault();
+	const tech_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
 	const response = await fetch(`/api/techpost/${tech_id}`, {
 		method: 'DELETE',
@@ -38,8 +36,7 @@ const delTechButtonHandler = async (event) => {
 	if (response.ok) {
 		document.location.replace('/technology');
 	} else {
-		alert('Failed to delete project');
-	}
+		alert('Failed to delete post!');
 	}
 };
 

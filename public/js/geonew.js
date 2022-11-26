@@ -2,13 +2,13 @@ const newFormHandler = async (event) => {
 	event.preventDefault();
 
 	const geo_title = document.querySelector('input[name="geo-post-title"]').value;
-	const geo_body = document.querySelector('textarea[name="geo-post-body"]').value;
+	const geo_text = document.querySelector('textarea[name="geo-post-body"]').value;
 
 	await fetch("/api/geopost", {
 		method: 'POST',
 		body: JSON.stringify({
 		geo_title,
-		geo_body
+		geo_text
 		}),
 		headers: {
 		'Content-Type': 'application/json'
