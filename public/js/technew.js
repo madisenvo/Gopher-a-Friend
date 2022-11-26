@@ -6,7 +6,7 @@ const newFormHandler = async (event) => {
 
 
 	await fetch("/api/techpost", {
-		method: 'PUT',
+		method: 'POST',
 		body: JSON.stringify({
 		tech_title,
 		tech_text
