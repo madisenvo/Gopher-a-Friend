@@ -23,7 +23,6 @@ header {
 .container {
         width: 70%;
         align-items: center;
-        overflow: scroll;
         position: relative;
         top: 200px;
         left: 50%;
@@ -320,7 +319,6 @@ h1 {
 .user-text {
     font-family: 'Fredericka the Great';
     font-size: 20px;
-    background-color: #4e9af1;
     color:#FFFFFF;
 }
 
@@ -355,7 +353,6 @@ h2{
         #art{
             height: 300px;
             width: 300px;
-            background-color: black;
             margin: 0 10px 0 10px;
         }
     .topic2{
@@ -364,7 +361,6 @@ h2{
         #geography{
             height: 300px;
             width: 300px;
-            background-color: black;
             margin: 0 10px 0 10px;
         }
     .topic3{
@@ -373,7 +369,6 @@ h2{
         #tech{
             height: 300px;
             width: 300px;
-            background-color: black;
             margin: 0 10px 0 10px;
         }
 
