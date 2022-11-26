@@ -14,6 +14,34 @@ header {
         width: 100%;
     }
 
+.login{
+    float: left;
+    position:absolute; top: 350px; left: 500px;
+    padding: 50px;
+    background: url(../images/swirl.png);
+    background-size: auto;
+    color: white !important;
+    border-radius: 20%;
+    font-family: 'Fredericka the Great';
+}
+
+.signup{
+    float: right;
+    position:absolute; right: 500px;
+    justify-content: space-around;
+    padding: 50px;
+    background: url(../images/swirl.png);
+    color: white;
+    border-radius: 20%;
+    font-family: 'Fredericka the Great';
+}
+
+.logSign{
+    font-family: Butterfly Kids;
+    font-size: 50px;
+    text-align: center;
+}
+
 .title{
     font-family: 'Fredericka the Great' !important;
     color: white;
@@ -192,16 +220,6 @@ h1 {
     text-align: center;
     font-size: 8rem;
     color: white;
-}
-
-.signup{
-    float: right;
-    padding-right: 300px;
-}
-
-.login{
-    float: left;
-    padding-left: 300px;
 }
 
 .createPost{
