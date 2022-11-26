@@ -1,6 +1,7 @@
 
 body{
     font-family:'Roboto',sans-serif;
+    background-color: #e299cb;
 }
 
 header {
@@ -37,7 +38,21 @@ ul{
     padding: 25px;
     background: url(../images/bg.png);
     color: white;
+    border-radius: 20%;
 }
+
+.user-font {
+    font-family: 'Butterfly Kids', cursive;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.user-text {
+    font-family: 'Fredericka the Great';
+    font-size: 20px;
+}
+
+
 
 /* buttons */
 @media all and (max-width:30em){
@@ -204,10 +219,15 @@ h1 {
     justify-content:center;
     flex-wrap:wrap;
     align-items: baseline;
+    gap: 150px;
+    
 }
 
 h2{
-    color: rgb(255, 51, 0);
+    color: rgb(77, 61, 186);
+    font-family: 'Butterfly Kids', cursive;
+    font-size: 50px;
+    font-style: bold;
 }
     .topic1{
         align-items: center; /*this does not center the text on the pic*/
