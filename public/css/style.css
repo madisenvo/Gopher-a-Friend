@@ -14,6 +14,23 @@ header {
         width: 100%;
     }
 
+<<<<<<<<< Temporary merge branch 1
+.go-back {
+        color:rgb(77, 61, 186);
+        vertical-align: text-top;
+    }
+=========
+.container {
+        width: 70%;
+        align-items: center;
+        overflow: scroll;
+        position: relative;
+        top: 200px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+>>>>>>>>> Temporary merge branch 2
+
 .login{
     display: flex;
     float: left;
@@ -226,8 +243,9 @@ ul{
     border-radius:2em;
     box-sizing: border-box;
     text-decoration:none;
-    font-family:'Roboto',sans-serif;
+    font-family: 'Fredericka the Great';
     font-weight:300;
+    font-size: 20px;
     color:#FFFFFF;
     background-color:#f14ebd;
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
@@ -246,30 +264,73 @@ h1 {
     color: white;
 }
 
-.createPost{
-    float: right;
-    padding-right: 200px;
+.go-back {
+    display: flex;
+    background-color:rgb(77, 61, 186);
+    color: rgb(250, 244, 244);
+    border: 2px solid rgb(235, 14, 238);
+    padding: 10px 20px;
+    text-align: bottom;
+    text-decoration: none;
+    display: inline-block;
 }
 
+/* user posts and edit styling */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 500px;
+    text-align: center;
+    margin: 8px;
+}
 
 .name-post {
     font-family: 'Butterfly Kids', cursive;
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 55px;
+    font-weight: bolder;
     color: rgb(77, 61, 186);
-    background-color: #e299cb;
+    background-color: #f14e4e;
+}
+
+.text-post {
+    padding: 2px 16px;
+    font-family: 'Fredericka the Great';
+    font-size: 30px;
+    background: url(../images/header2.png);
+    height: 200px;
+}
+
+.createPost{
+    float: right;
+    padding-right: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 400px;
+    text-align: center;
+    margin: 8px;
+    background-color: #f14e4e;
+    height: 400px;
+}
+
+.entry-field {
+    width: 300px;
+    align-items: center;
 }
 
 .user-text {
     font-family: 'Fredericka the Great';
     font-size: 20px;
     background-color: #4e9af1;
+    color:#FFFFFF;
 }
 
 .posts{
     float: left;
     padding-left: 100px;
 }
+
+
+
 
 /* profile.handlebars */
 .topics {
