@@ -1,0 +1,27 @@
+<a href="/technology" class="go-back"> &larr; Back to dashboard</a>
+<article class="">
+    <section class="">
+        <div class="">
+            <h2>
+                Edit Post
+            </h2>
+        </div>
+        <div class="card-body">
+
+            <input type="hidden" name="tech-post-id" value="{{techPost.id}}"/>
+
+            <form id="edit-tech-form" class="edit-tech-form">
+
+                <div class="post-content">
+                    <textarea class="entry-field" id="tech-post-body" name="tech-post-body">{{techPost.tech_text}}</textarea>
+                </div>
+
+                <button class="editBtn" type="submit" id="edit-tech-form">Update Post</button>
+
+                <button class="deleteBtn" type="button" id="tech-delete-btn">Delete Post</button>
+            </form>
+        </div>
+    </section>
+</article>
+
+<script src="/js/techedit.js"></script>

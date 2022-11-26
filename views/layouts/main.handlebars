@@ -1,48 +1,47 @@
-{{! first page user sees - TODO: front end: needs formatting - add classes/css }}
+{{!-- first page user sees - TODO: front end: needs formatting - add classes/css --}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gopher a Friend</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Playfair+Display:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header style="position: relative; top: -90px;">
+      <h1 class="title">Gopher a Friend</h1>
+    </header>
+
+  <div>
+    <main>
+      <!-- Render the sub layout -->
+      {{{ body }}}
+
+    </main>
+  </div>
+
+    <footer style="position: fixed; bottom: 0;">
+      <p class="copy">
+        &copy; 2022 Gopher a Friend
+      </p>
+    </footer>
 
 
-<html lang='en'>
 
-  <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Gopher a Friend</title>
-    <link rel='stylesheet' href='/css/style.css' />
-  </head>
-
-  <body>
-    <div class=''>
-      <header class=''>
-        <h1 class='title'>
-          {{! <span>
-        role="img" aria-label="money">💸 TODO: replace img with gopher
-        </span> }}
-          <a href='/'>Gopher a Friend</a>
-        </h1>
-        <nav class='loginBtn'>
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-            <a href='/profile'>profile</a>
-            |
-            <button class='loginBtn' id='logout'>logout</button>
-          {{else}}
-            <a href='/login'>login</a>
-          {{/if}}
-        </nav>
-      </header>
-      <main class=''>
-        <!-- Render the sub layout -->
-        {{{body}}}
-      </main>
-      <footer>
-
-      </footer>
-    </div>
-
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-      <script src='/js/logout.js'></script>
-    {{/if}}
-  </body>
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
 
 </html>

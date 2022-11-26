@@ -1,0 +1,27 @@
+<a href="/art" class="go-back"> &larr; Back to dashboard</a>
+<article class="">
+    <section class="">
+        <div class="">
+            <h2>
+                Edit Post
+            </h2>
+        </div>
+    <div class="card-body">
+
+            <input type="hidden" name="art-post-id" value="{{artPost.id}}"/>
+
+            <form id="edit-art-form" class="edit-art-form">
+
+                <div class="post-content">
+                    <textarea class="entry-field" id="art-post-body" name="art-post-body">{{artPost.art_text}}</textarea>
+                </div>
+
+                <button class="editBtn" type="submit" id="edit-art-form">Update Post</button>
+
+                <button class="deleteBtn" type="button" id="art-delete-btn">Delete Post</button>
+            </form>
+        </div>
+    </section>
+</article>
+
+<script src="/js/artedit.js"></script>

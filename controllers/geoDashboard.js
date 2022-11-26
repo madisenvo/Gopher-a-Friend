@@ -1,32 +1,27 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { TechPost, TechComment, User} = require('../models');
+const { GeoPost, User } = require('../models');
 
-// see all posts
+
 router.get('/', (req, res) => {
-    TechPost.findAll({
+    GeoPost.findAll({
             attributes: [
                 'id',
-                'tech_title',
-                'tech_text',
+                'geo_text',
             ],
             include: [{
-                    model: TechComment,
-                    attributes: ['id', 'tech_comment_text', 'tech_post_id', 'user_id'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
+                    model: User,
+                    attributes: ['username'],
                 },
             ]
         })
         .then(postData => {
-            const techPosts = postData.map(techPost => techPost.get({
+            const geoPosts = postData.map(geoPost => geoPost.get({
                 plain: true
             }));
 
-            res.render('technology', {
-                techPosts
+            res.render('geography', {
+                geoPosts
             });
         })
         .catch(err => {
@@ -37,19 +32,14 @@ router.get('/', (req, res) => {
 
 // update a post
 router.get('/update/:id', (req, res) => {
-    TechPost.findOne({
+    GeoPost.findOne({
         attributes: [
             'id',
-            'tech_title',
-            'tech_text',
+            'geo_text',
         ],
         include: [{
-                model: TechComment,
-                attributes: ['id', 'tech_comment_text', 'tech_post_id', 'user_id'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
+                model: User,
+                attributes: ['username'],
             },
         ]
         })
@@ -61,12 +51,12 @@ router.get('/update/:id', (req, res) => {
                 return;
             }
 
-            const techPost = postData.get({
+            const geoPost = postData.get({
                 plain: true
             });
 
-            res.render('edit', {
-                techPost,
+            res.render('editGeo', {
+                geoPost,
                 loggedIn: true
             });
         })
@@ -75,6 +65,5 @@ router.get('/update/:id', (req, res) => {
             res.status(500).json(err);
         });
 })
-
 
 module.exports = router;

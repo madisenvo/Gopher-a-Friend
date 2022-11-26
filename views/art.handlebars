@@ -1,0 +1,32 @@
+<a href="/profile" class="go-back"> &larr; Return to Profile </a>
+
+
+<section class="posts">
+    <div>
+        <ul class="post-list">
+            <li>
+                {{#each artPosts as |artPost|}}
+                    {{> artPosts artPost}}
+                {{/each}}
+            </li>
+        </ul>   
+    </div>
+</section>
+
+<article class="createPost">
+    <section>
+        <div>
+            <h2>Create a Post</h2>
+        </div>
+        <div>
+            <form id = "art-post-form" class="art-post-form">
+                <div class="post-content">
+                    <textarea class="entry-field" id="post-body" name="art-post-body"></textarea>
+                </div>
+                <button type="submit" class="createBtn">Create</button>
+            </form>
+        </div>
+    </section>
+</article>
+
+<script src="/js/artnew.js"></script>

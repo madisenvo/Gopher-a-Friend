@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { TechComment, TechPost, User } = require('../../models');
+const { TechPost, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //find all tech posts
 // realtive path = /api/techpost
 router.get('/', (req, res) => {
     TechPost.findAll({
-            attributes: ['id', 'tech_text', 'tech_title'],
+            attributes: ['id', 'tech_text'],
             include: [{
                     model: User,
                     attributes: ['username'],
@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
             where: {
                 id: req.params.id,
             },
-            attributes: ['id', 'tech_text', 'tech_title'],
+            attributes: ['id', 'tech_text'],
             include: [{
                     model: User,
                     attributes: ['username'],
@@ -54,7 +54,6 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     console.log('creating');
     TechPost.create({
-            tech_title: req.body.tech_title,
             tech_text: req.body.tech_text,
             user_id: req.session.user_id
         })
@@ -70,7 +69,6 @@ router.post('/', withAuth, (req, res) => {
 //relative path = /api/techpost/:id (works)
 router.put('/:id', withAuth, (req, res) => {
     TechPost.update({
-            tech_title: req.body.tech_title,
             tech_text: req.body.tech_text,
         }, {
             where: {

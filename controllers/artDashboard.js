@@ -1,32 +1,27 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { GeoPost, GeoComment, User} = require('../models');
+// const sequelize = require('../config/connection');
+const { ArtPost, User } = require('../models');
 
-
+// see all posts
 router.get('/', (req, res) => {
-    GeoPost.findAll({
+    ArtPost.findAll({
             attributes: [
                 'id',
-                'geo_title',
-                'geo_text',
+                'art_text',
             ],
             include: [{
-                    model: GeoComment,
-                    attributes: ['id', 'geo_comment_text', 'geo_post_id', 'user_id'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
+                    model: User,
+                    attributes: ['username'],
                 },
             ]
         })
         .then(postData => {
-            const geoPosts = postData.map(geoPost => geoPost.get({
+            const artPosts = postData.map(artPost => artPost.get({
                 plain: true
             }));
 
-            res.render('geography', {
-                geoPosts
+            res.render('art', {
+                artPosts
             });
         })
         .catch(err => {
@@ -37,19 +32,14 @@ router.get('/', (req, res) => {
 
 // update a post
 router.get('/update/:id', (req, res) => {
-    GeoPost.findOne({
+    ArtPost.findOne({
         attributes: [
             'id',
-            'geo_title',
-            'geo_text',
+            'art_text',
         ],
         include: [{
-                model: GeoComment,
-                attributes: ['id', 'geo_comment_text', 'geo_post_id', 'user_id'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
+                model: User,
+                attributes: ['username'],
             },
         ]
         })
@@ -61,12 +51,12 @@ router.get('/update/:id', (req, res) => {
                 return;
             }
 
-            const geoPost = postData.get({
+            const artPost = postData.get({
                 plain: true
             });
 
-            res.render('edit', {
-                geoPost,
+            res.render('editArt', {
+                artPost,
                 loggedIn: true
             });
         })

@@ -1,32 +1,28 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { ArtPost, ArtComment, User} = require('../models');
+const { TechPost, User } = require('../models');
 
 // see all posts
+//relative path = /technology
 router.get('/', (req, res) => {
-    ArtPost.findAll({
+    TechPost.findAll({
             attributes: [
                 'id',
-                'art_title',
-                'art_text',
+                'tech_text',
             ],
             include: [{
-                    model: ArtComment,
-                    attributes: ['id', 'art_comment_text', 'art_post_id', 'user_id'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
+                    model: User,
+                    attributes: ['username'],
                 },
             ]
         })
         .then(postData => {
-            const artPosts = postData.map(artPost => artPost.get({
+            const techPosts = postData.map(techPost => techPost.get({
                 plain: true
             }));
 
-            res.render('art', {
-                artPosts
+            res.render('technology', {
+                techPosts
             });
         })
         .catch(err => {
@@ -37,19 +33,14 @@ router.get('/', (req, res) => {
 
 // update a post
 router.get('/update/:id', (req, res) => {
-    ArtPost.findOne({
+    TechPost.findOne({
         attributes: [
             'id',
-            'art_title',
-            'art_text',
+            'tech_text',
         ],
         include: [{
-                model: ArtComment,
-                attributes: ['id', 'art_comment_text', 'art_post_id', 'user_id'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
+                model: User,
+                attributes: ['username'],
             },
         ]
         })
@@ -61,12 +52,12 @@ router.get('/update/:id', (req, res) => {
                 return;
             }
 
-            const artPost = postData.get({
+            const techPost = postData.get({
                 plain: true
             });
 
-            res.render('edit', {
-                artPost,
+            res.render('editTech', {
+                techPost,
                 loggedIn: true
             });
         })
@@ -75,5 +66,6 @@ router.get('/update/:id', (req, res) => {
             res.status(500).json(err);
         });
 })
+
 
 module.exports = router;
