@@ -1,8 +1,23 @@
-<div class="">
-  <div class="">
-    <h2>Welcome, {{name}}!</h2>
+<div>
+        <nav style="position: relative; bottom: 0">
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <button class="logout-btn" id="logout">Logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+</div>
+<article>
+  <div class="user-info">
+    <h3>Welcome, {{name}}!</h3>
+    <p>Username: {{username}}</p>
+    <p>Grade: {{grade}}</p>
+    <p>Favorite Animal: {{animal}}</p>
+    <p>Favorite Color: {{color}}</p>
+    <p>Favorite Food: {{food}}</p>
   </div>
-
+</article>
     <div class='topics'>
     <div id='topic1'>
       <a href="/art">

@@ -13,7 +13,7 @@
 <body>
     <header style="position: relative; top: -90px;">
       <h1>Gopher a Friend</h1>
-      <nav style="position: relative; bottom: 0">
+      {{!-- <nav style="position: relative; bottom: 0">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">Profile</a> |
@@ -21,7 +21,7 @@
         {{else}}
         <a href="/login">login</a>
         {{/if}}
-      </nav>
+      </nav> --}}
     </header>
 
   <div>
@@ -29,10 +29,9 @@
       <!-- Render the sub layout -->
       {{{ body }}}
 
-      <img src="/images/loginBackgroundImg.png" alt="gopher" width="500" height="500">
     </main>
   </div>
-  <div>
+
     <footer>
       <p>
         &copy; 2022 Gopher a Friend
