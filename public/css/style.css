@@ -19,7 +19,6 @@ header {
 .container {
         width: 70%;
         align-items: center;
-        overflow: scroll;
         position: relative;
         top: 200px;
         left: 50%;
