@@ -7,6 +7,8 @@
         width: 100%;
     }
 
+    
+
 h1 {
     text-align: center;
     font-size: 8rem;
@@ -14,9 +16,8 @@ h1 {
 }
 
     .external {
-        display: table;
         position: absolute;
-        top: 100px;
+        top: 180px;
         left: 0;
         height: 100%;
         width: 100%;
@@ -55,3 +56,37 @@ h1 {
     color: black;
     font-size: large;
 }
+
+/* profile.handlebars */
+.topics {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap:wrap;
+    align-items: baseline;
+}
+
+h2{
+    color: rgb(255, 51, 0);
+}
+    .topic1{
+        align-items: center; /*this does not center the text on the pic*/
+    }
+        #art{
+            height: 300px;
+            width: 300px;
+        }
+    .topic2{
+        align-items: center;
+    }
+        #geography{
+            height: 300px;
+            width: 300px;
+        }
+    .topic3{
+        align-items: center;
+    }
+        #tech{
+            height: 300px;
+            width: 300px;
+        }
