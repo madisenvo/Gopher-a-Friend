@@ -14,9 +14,15 @@ header {
         width: 100%;
     }
 
+.container {
+        width: 70%;
+        align-items: center;
+        border: 1px solid black;
+        overflow: hidden;
+}
+
 .login{
     float: left;
-    /* margin-left: 500px; */
     background: url(../images/swirl.png);
     background-size: auto;
     color: white !important;
@@ -30,7 +36,6 @@ header {
 
 .signup{
     float: right;
-    /* margin-right: 500px; */
     color: white !important;
     background: url(../images/swirl.png);
     font-family: 'Fredericka the Great';
@@ -39,9 +44,10 @@ header {
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
-.signup input, .signupBtn, .login input, .loginBtn {
+.signup input, .signupBtn, .login input, .homeLoginBtn {
     display: block;
     width: 100%;
     padding: 7px;
@@ -140,7 +146,7 @@ ul{
     border-color: rgba(255,255,255,1);
 }
 
-.loginBtn{
+.loginBtn, .homeLoginBtn{
     display:inline-block;
     padding:0.3em 1.2em;
     border:0.16em solid rgba(255,255,255,0);
