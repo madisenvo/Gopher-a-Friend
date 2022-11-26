@@ -15,6 +15,7 @@ header {
     }
 
 .login{
+    display: flex;
     float: left;
     position:absolute; top: 350px; left: 500px;
     background: url(../images/swirl.png);
@@ -29,6 +30,7 @@ header {
 }
 
 .signup{
+    display: flex;
     float: right;
     position:absolute; top: 350px; right: 500px;
     color: white !important;
