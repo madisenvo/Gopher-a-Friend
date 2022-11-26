@@ -1,8 +1,8 @@
 <a href="/profile" class="go-back"> &larr; Return to Profile </a>
 
 
-<section class="">
-    <div class="">
+<section class="posts">
+    <div>
         <ul class="post-list">
             <li>
                 {{#each techPosts as |techPost|}}
@@ -13,22 +13,17 @@
     </div>
 </section>
 
-<article class="">
-    <section class="">
-        <div class="">
+<article class="createPost">
+    <section>
+        <div>
             <h2>Create a Post</h2>
         </div>
-        <div class="">
+        <div>
             <form id = "tech-post-form" class="tech-post-form">
-                <div class="">
-                    <label for="post-title">Title</label>
-                    <input type="text" id="post-title" name="tech-post-title" />
-                </div>
                 <div class="post-content">
-                    <label for="post-content">Content</label>
                     <textarea class="entry-field" id="post-body" name="tech-post-body"></textarea>
                 </div>
-                <button type="submit" class="btn">Create</button>
+                <button type="submit" class="createBtn">Create</button>
             </form>
         </div>
     </section>

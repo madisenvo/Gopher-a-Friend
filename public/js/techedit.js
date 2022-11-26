@@ -2,16 +2,12 @@ const tech_id = window.location.toString().split('/')[window.location.toString()
 
 const editTechFormHandler = async (event) => {
 	event.preventDefault();
-	const tech_title = document.querySelector('input[name="tech-post-title"]').value;
 	const tech_text = document.querySelector('textarea[name="tech-post-body"]').value;
 
-	if (tech_text && tech_title) {
+	if (tech_text) {
 		const response = await fetch(`/api/techpost/${tech_id}`, {
 		method: 'PUT',
-		body: JSON.stringify({
-		tech_title,
-		tech_text
-	}),
+		body: JSON.stringify({tech_text}),
 		headers: {
 		'Content-Type': 'application/json'
 		}

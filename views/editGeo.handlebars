@@ -11,19 +11,14 @@
             <input type="hidden" name="geo-post-id" value="{{post.id}}"/>
 
             <form id="edit-geo-form" class="edit-geo-form">
-                <div class="">
-                    <label for="">Title</label>
-                    <input type="text" name="geo-post-title" id="post-title" value="{{geoPost.geo_title}}" />
-                </div>
 
                 <div class="post-content">
-                    <label for="post-content">Content</label>
                     <textarea class="entry-field" id="geo-post-body" name="geo-post-body">{{geoPost.geo_text}}</textarea>
                 </div>
 
-                <button type="submit" id="edit-geo-form">Update Post</button>
+                <button class="editBtn" type="submit" id="edit-geo-form">Update Post</button>
 
-                <button type="button" id="geo-delete-btn">Delete Post</button>
+                <button class="deleteBtn" type="button" id="geo-delete-btn">Delete Post</button>
             </form>
         </div>
     </section>

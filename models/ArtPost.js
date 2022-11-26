@@ -10,13 +10,6 @@ ArtPost.init({
         primaryKey: true,
         autoIncrement: true
     },
-    art_title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            len: [1]
-        }
-    },
     art_text: {
         type: DataTypes.STRING,
         allowNull: false,

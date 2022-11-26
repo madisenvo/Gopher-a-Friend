@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { TechPost, TechComment, User} = require('../models');
+const { TechPost, User } = require('../models');
 
 // see all posts
 //relative path = /technology
@@ -8,16 +8,11 @@ router.get('/', (req, res) => {
     TechPost.findAll({
             attributes: [
                 'id',
-                'tech_title',
                 'tech_text',
             ],
             include: [{
-                    model: TechComment,
-                    attributes: ['id', 'tech_comment_text', 'tech_post_id', 'user_id'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
+                    model: User,
+                    attributes: ['username'],
                 },
             ]
         })
@@ -41,16 +36,11 @@ router.get('/update/:id', (req, res) => {
     TechPost.findOne({
         attributes: [
             'id',
-            'tech_title',
             'tech_text',
         ],
         include: [{
-                model: TechComment,
-                attributes: ['id', 'tech_comment_text', 'tech_post_id', 'user_id'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
+                model: User,
+                attributes: ['username'],
             },
         ]
         })

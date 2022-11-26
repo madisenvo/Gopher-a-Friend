@@ -11,19 +11,14 @@
             <input type="hidden" name="tech-post-id" value="{{techPost.id}}"/>
 
             <form id="edit-tech-form" class="edit-tech-form">
-                <div class="">
-                    <label for="">Title</label>
-                    <input type="text" name="tech-post-title" id="post-title" value="{{techPost.tech_title}}" />
-                </div>
 
                 <div class="post-content">
-                    <label for="post-content">Content</label>
                     <textarea class="entry-field" id="tech-post-body" name="tech-post-body">{{techPost.tech_text}}</textarea>
                 </div>
 
-                <button type="submit" id="edit-tech-form">Update Post</button>
+                <button class="editBtn" type="submit" id="edit-tech-form">Update Post</button>
 
-                <button type="button" id="tech-delete-btn">Delete Post</button>
+                <button class="deleteBtn" type="button" id="tech-delete-btn">Delete Post</button>
             </form>
         </div>
     </section>

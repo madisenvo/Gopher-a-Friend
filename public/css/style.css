@@ -1,15 +1,176 @@
 
-    header {
-        background: url(../images/chalkboard.jpg);
-        color: white;
-        margin-top: 0;
+body{
+    font-family:'Roboto',sans-serif;
+}
+
+header {
+        background: url(../images/header.png);
+        width: 100% auto !important;
+        margin: 0;
+        padding: 0;
         height: 200px;
         width: 100%;
     }
 
+.title{
+    font-family: 'Fredericka the Great' !important;
+    color: white;
+}
+
+.copy{
+    color:darkgrey;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
 ul{
     list-style: none;
 }
+
+.user-info{
+    float: left;
+    padding: 25px;
+    background: url(../images/bg.png);
+    color: white;
+}
+
+/* buttons */
+@media all and (max-width:30em){
+    .logout-btn .signupBtn .loginBtn .editBtn .deleteBtn .createBtn{
+        display:block;
+        margin:0.2em auto;
+    }
+}
+
+.logout-btn{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4e9af1;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    position: absolute;
+    top: -135px;
+    right: 26px;
+}
+
+.logout-btn:hover{
+    border-color: rgba(255,255,255,1);
+}
+
+.loginBtn{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#f1bb4e;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.loginBtn:hover{
+    border-color: rgba(255,255,255,1);
+}
+
+.signupBtn {
+    display:inline-block;
+    padding:0.3em 1.2em;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4ef18f;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.signupBtn:hover{
+    border-color: rgba(255,255,255,1);
+}
+
+.editBtn{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#9a4ef1;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.editBtn:hover{
+    border-color: rgba(255,255,255,1);
+}
+
+.deleteBtn{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#f14e4e;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.deleteBtn:hover{
+    border-color: rgba(255,255,255,1);
+}
+
+.createBtn {
+    display:inline-block;
+    padding:0.3em 1.2em;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#f14ebd;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.createBtn:hover{
+    border-color: rgba(255,255,255,1);
+}
+
 
 h1 {
     text-align: center;
@@ -17,48 +178,25 @@ h1 {
     color: white;
 }
 
-    .external {
-        position: absolute;
-        top: 180px;
-        left: 0;
-        height: 100%;
-        width: 100%;
-    }
-
-        .middle {
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-            .internal {
-                margin-left: auto;
-                margin-right: auto;
-                width: fit-content;
-                text-align: center;
-                color: blue;
-                font-size: xx-large;
-            }
-
-                .input {
-                    background-color: rgb(250, 86, 86);
-                    color: black;
-                }
-
-                .loginBtn {
-                    background-color: greenyellow;
-
-                }
-
-                .signupBtn {
-                    background-color: green;
-                }
-
-/* maddy fckin around */
-.topic-link{
-    color: black;
-    font-size: large;
+.signup{
+    float: right;
+    padding-right: 300px;
 }
 
+.login{
+    float: left;
+    padding-left: 300px;
+}
+
+.createPost{
+    float: right;
+    padding-right: 200px;
+}
+
+.posts{
+    float: left;
+    padding-left: 300px;
+}
 /* profile.handlebars */
 .topics {
     display: flex;

@@ -1,22 +1,17 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { GeoPost, GeoComment, User} = require('../models');
+const { GeoPost, User } = require('../models');
 
 
 router.get('/', (req, res) => {
     GeoPost.findAll({
             attributes: [
                 'id',
-                'geo_title',
                 'geo_text',
             ],
             include: [{
-                    model: GeoComment,
-                    attributes: ['id', 'geo_comment_text', 'geo_post_id', 'user_id'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
+                    model: User,
+                    attributes: ['username'],
                 },
             ]
         })
@@ -40,16 +35,11 @@ router.get('/update/:id', (req, res) => {
     GeoPost.findOne({
         attributes: [
             'id',
-            'geo_title',
             'geo_text',
         ],
         include: [{
-                model: GeoComment,
-                attributes: ['id', 'geo_comment_text', 'geo_post_id', 'user_id'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
+                model: User,
+                attributes: ['username'],
             },
         ]
         })

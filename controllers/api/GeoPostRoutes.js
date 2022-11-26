@@ -1,23 +1,15 @@
 const router = require('express').Router();
-const { GeoComment, GeoPost, User } = require('../../models');
+const { GeoPost, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //find all geo posts
 //realtive path = /api/geopost (works)
 router.get('/', (req, res) => {
     GeoPost.findAll({
-            attributes: ['id', 'geo_text', 'geo_title'],
+            attributes: ['id', 'geo_text'],
             include: [{
                     model: User,
                     attributes: ["username"],
-                },
-                {
-                    model: GeoComment,
-                    attributes: ["id", "geo_comment_text", "geo_post_id", "user_id"],
-                    include: {
-                        model: User,
-                        attributes: ["username"],
-                    },
                 },
             ],
         })
@@ -36,18 +28,10 @@ router.get("/:id", (req, res) => {
             where: {
                 id: req.params.id,
             },
-            attributes: ["id", "geo_text", "geo_title"],
+            attributes: ["id", "geo_text"],
             include: [{
                     model: User,
                     attributes: ["username"],
-                },
-                {
-                    model: GeoComment,
-                    attributes: ["id", "geo_comment_text", "geo_post_id", "user_id"],
-                    include: {
-                        model: User,
-                        attributes: ["username"],
-                    },
                 },
             ],
         })
@@ -72,7 +56,6 @@ router.get("/:id", (req, res) => {
 router.post("/", withAuth, (req, res) => {
     console.log("creating");
     GeoPost.create({
-            geo_title: req.body.geo_title,
             geo_text: req.body.geo_text,
             user_id: req.session.user_id
         })
@@ -87,7 +70,6 @@ router.post("/", withAuth, (req, res) => {
 //relative path = /api/geopost/:id (works)
 router.put("/:id", withAuth, (req, res) => {
     GeoPost.update({
-            geo_title: req.body.geo_title,
             geo_text: req.body.geo_text,
         }, {
             where: {
