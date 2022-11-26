@@ -6,21 +6,27 @@
                 Edit Post
             </h2>
         </div>
-        <div class="">
-            <form class="">
+    <div class="card-body">
+
+            <input type="hidden" name="art-post-id" value="{{artPost.id}}"/>
+
+            <form id="edit-art-form" class="edit-art-form">
                 <div class="">
                     <label for="">Title</label>
-                    <input type="text" name="post-title" id="post-title" value="{{artPost.art_title}}" />
+                    <input type="text" name="art-post-title" id="post-title" value="{{artPost.art_title}}" />
                 </div>
+
                 <div class="post-content">
                     <label for="post-content">Content</label>
-                    <textarea class="entry-field" id="post-content" name="post-content">{{artPost.art_text}}</textarea>
+                    <textarea class="entry-field" id="art-post-content" name="art-post-body">{{artPost.art_text}}</textarea>
                 </div>
-                <button type="submit" id="#edit-art-form">Update Post</button>
-                <button type="button" id="#art-delete-btn">Delete Post</button>
+
+                <button type="submit" id="art-update">Update Post</button>
+
+                <button type="button" id="art-delete-btn">Delete Post</button>
             </form>
         </div>
     </section>
 </article>
 
-<script src="/js/techedit.js"></script>
+<script src="/js/artedit.js"></script>
