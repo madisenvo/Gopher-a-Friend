@@ -4,7 +4,7 @@
       <nav style="position: relative; bottom: 0">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <button class="loginBtn"href="/profile">Profile</button> |
+        <a href="/profile" class="go-back"> &larr; Return to Profile </a>
         <button class="logout-btn" id="logout">Logout</button>
         {{else}}
         <a class="loginBtn" href="/login">Login</a>
