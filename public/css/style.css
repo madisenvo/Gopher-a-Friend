@@ -16,10 +16,19 @@ header {
 
 
 
+.container {
+        width: 70%;
+        align-items: center;
+        overflow: scroll;
+        position: relative;
+        top: 200px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
 .login{
     display: flex;
     float: left;
-    /* margin-left: 500px; */
     background: url(../images/swirl.png);
     background-size: auto;
     color: white !important;
@@ -34,7 +43,6 @@ header {
 .signup{
     display: flex;
     float: right;
-    /* margin-right: 500px; */
     color: white !important;
     background: url(../images/swirl.png);
     font-family: 'Fredericka the Great';
@@ -45,13 +53,17 @@ header {
     box-sizing: border-box;
 }
 
-.signup input, .signupBtn, .login input, .loginBtn {
+.signup input, .signupBtn, .login input, .homeLoginBtn {
     display: block;
     width: 100%;
     padding: 7px;
     border: none;
     outline: none;
     box-sizing: border-box;
+}
+
+.signupBtn, .homeLoginBtn {
+    margin-top: 20px;
 }
 
 .logSignHeader{
@@ -159,7 +171,7 @@ ul{
     border-color: rgba(255,255,255,1);
 }
 
-.signupBtn {
+.signupBtn,  .homeLoginBtn {
     display:inline-block;
     padding:0.3em 1.2em;
     border:0.16em solid rgba(255,255,255,0);
@@ -338,6 +350,8 @@ h2{
         #art{
             height: 300px;
             width: 300px;
+            background-color: black;
+            margin: 0 10px 0 10px;
         }
     .topic2{
         align-items: center;
@@ -345,6 +359,8 @@ h2{
         #geography{
             height: 300px;
             width: 300px;
+            background-color: black;
+            margin: 0 10px 0 10px;
         }
     .topic3{
         align-items: center;
@@ -352,6 +368,8 @@ h2{
         #tech{
             height: 300px;
             width: 300px;
+            background-color: black;
+            margin: 0 10px 0 10px;
         }
 
 .go-back {
