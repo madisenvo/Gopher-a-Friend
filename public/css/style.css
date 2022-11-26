@@ -1,4 +1,5 @@
 
+
 body{
     font-family:'Roboto',sans-serif;
     background-color: #e299cb;
@@ -14,25 +15,12 @@ header {
         width: 100%;
     }
 
-<<<<<<<<< Temporary merge branch 1
-.go-back {
-        color:rgb(77, 61, 186);
-        vertical-align: text-top;
-    }
-=========
-.container {
-        width: 70%;
-        align-items: center;
-        position: relative;
-        top: 200px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-}
->>>>>>>>> Temporary merge branch 2
+
 
 .login{
     display: flex;
     float: left;
+    /* margin-left: 500px; */
     background: url(../images/swirl.png);
     background-size: auto;
     color: white !important;
@@ -47,6 +35,7 @@ header {
 .signup{
     display: flex;
     float: right;
+    /* margin-right: 500px; */
     color: white !important;
     background: url(../images/swirl.png);
     font-family: 'Fredericka the Great';
@@ -57,17 +46,13 @@ header {
     box-sizing: border-box;
 }
 
-.signup input, .signupBtn, .login input, .homeLoginBtn {
+.signup input, .signupBtn, .login input, .loginBtn {
     display: block;
     width: 100%;
     padding: 7px;
     border: none;
     outline: none;
     box-sizing: border-box;
-}
-
-.signupBtn, .homeLoginBtn {
-    margin-top: 20px;
 }
 
 .logSignHeader{
@@ -175,7 +160,7 @@ ul{
     border-color: rgba(255,255,255,1);
 }
 
-.signupBtn,  .homeLoginBtn {
+.signupBtn {
     display:inline-block;
     padding:0.3em 1.2em;
     border:0.16em solid rgba(255,255,255,0);
@@ -319,6 +304,7 @@ h1 {
 .user-text {
     font-family: 'Fredericka the Great';
     font-size: 20px;
+    background-color: #4e9af1;
     color:#FFFFFF;
 }
 
@@ -353,7 +339,6 @@ h2{
         #art{
             height: 300px;
             width: 300px;
-            margin: 0 10px 0 10px;
         }
     .topic2{
         align-items: center;
@@ -361,7 +346,6 @@ h2{
         #geography{
             height: 300px;
             width: 300px;
-            margin: 0 10px 0 10px;
         }
     .topic3{
         align-items: center;
@@ -369,7 +353,6 @@ h2{
         #tech{
             height: 300px;
             width: 300px;
-            margin: 0 10px 0 10px;
         }
 
 .go-back {
