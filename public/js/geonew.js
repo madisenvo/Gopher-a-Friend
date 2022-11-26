@@ -1,8 +1,8 @@
 const newFormHandler = async (event) => {
 	event.preventDefault();
 
-	const geo_title = document.querySelector('input[name="post-title"]').value;
-	const geo_body = document.querySelector('textarea[name="post-body"]').value;
+	const geo_title = document.querySelector('input[name="geo-post-title"]').value;
+	const geo_body = document.querySelector('textarea[name="geo-post-body"]').value;
 
 	await fetch("/api/geopost", {
 		method: 'PUT',
