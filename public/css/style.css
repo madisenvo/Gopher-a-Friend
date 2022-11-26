@@ -17,8 +17,11 @@ header {
 .container {
         width: 70%;
         align-items: center;
-        border: 1px solid black;
-        overflow: hidden;
+        overflow: scroll;
+        position: relative;
+        top: 200px;
+        left: 50%;
+        transform: translate(-50%, -50%);
 }
 
 .login{
@@ -44,7 +47,6 @@ header {
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .signup input, .signupBtn, .login input, .homeLoginBtn {
@@ -54,6 +56,10 @@ header {
     border: none;
     outline: none;
     box-sizing: border-box;
+}
+
+.signupBtn, .homeLoginBtn {
+    margin-top: 20px;
 }
 
 .logSignHeader{
@@ -146,7 +152,7 @@ ul{
     border-color: rgba(255,255,255,1);
 }
 
-.loginBtn, .homeLoginBtn{
+.loginBtn{
     display:inline-block;
     padding:0.3em 1.2em;
     border:0.16em solid rgba(255,255,255,0);
@@ -166,7 +172,7 @@ ul{
     border-color: rgba(255,255,255,1);
 }
 
-.signupBtn {
+.signupBtn,  .homeLoginBtn {
     display:inline-block;
     padding:0.3em 1.2em;
     border:0.16em solid rgba(255,255,255,0);
