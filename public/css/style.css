@@ -5,7 +5,8 @@ body{
 }
 
 header {
-        background: url(../images/header.png);
+        background: url(../images/header2.png);
+        background-size: cover;
         width: 100% auto !important;
         margin: 0;
         padding: 0;
@@ -13,10 +14,54 @@ header {
         width: 100%;
     }
 
+.login{
+    float: left;
+    position:absolute; top: 350px; left: 500px;
+    background: url(../images/swirl.png);
+    background-size: auto;
+    color: white !important;
+    font-family: 'Fredericka the Great';
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.signup{
+    float: right;
+    position:absolute; top: 350px; right: 500px;
+    color: white !important;
+    background: url(../images/swirl.png);
+    font-family: 'Fredericka the Great';
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.logSignHeader{
+    font-family: Butterfly Kids;
+    margin: 0;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+.input {
+    caret-color: #f14e4e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 7px;
+}
+
 .title{
     font-family: 'Fredericka the Great' !important;
     color: white;
 }
+
 
 .copy{
     color:darkgrey;
@@ -191,16 +236,6 @@ h1 {
     text-align: center;
     font-size: 8rem;
     color: white;
-}
-
-.signup{
-    float: right;
-    padding-right: 300px;
-}
-
-.login{
-    float: left;
-    padding-left: 300px;
 }
 
 .createPost{
