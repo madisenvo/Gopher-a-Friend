@@ -66,7 +66,7 @@ router.get('/update/:id', (req, res) => {
                 plain: true
             });
 
-            res.render('edit', {
+            res.render('editTech', {
                 techPost,
                 loggedIn: true
             });
