@@ -1,8 +1,6 @@
-
-
 body{
     font-family:'Roboto',sans-serif;
-    background-color: #e299cb;
+    background-color:#f684b0b8;
 }
 
 header {
@@ -15,12 +13,17 @@ header {
         width: 100%;
     }
 
-
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
 
 .login{
     display: flex;
+    flex-direction: column;
     float: left;
-    /* margin-left: 500px; */
+    margin-left: 20%;
     background: url(../images/swirl.png);
     background-size: auto;
     color: white !important;
@@ -35,7 +38,8 @@ header {
 .signup{
     display: flex;
     float: right;
-    /* margin-right: 500px; */
+    flex-direction: column;
+    margin-right: 20%;
     color: white !important;
     background: url(../images/swirl.png);
     font-family: 'Fredericka the Great';
@@ -55,12 +59,13 @@ header {
     box-sizing: border-box;
 }
 
+
 .logSignHeader{
     font-family: Butterfly Kids;
     margin: 0;
     font-size: 50px;
-    text-align: center;
     color: white;
+    text-align: center;
 }
 
 .input {
@@ -162,6 +167,7 @@ ul{
 
 .signupBtn, .homeLoginBtn{
     display:inline-block;
+    margin-top: 15px;
     padding:0.3em 1.2em;
     border:0.16em solid rgba(255,255,255,0);
     border-radius:2em;
@@ -305,6 +311,8 @@ h1 {
     font-family: 'Fredericka the Great';
     font-size: 20px;
     background-color: #4e9af1;
+    padding: 20px;
+    border-radius: 20%;
     color:#FFFFFF;
 }
 
@@ -324,7 +332,6 @@ h1 {
     flex-wrap:wrap;
     align-items: baseline;
     gap: 150px;
-    
 }
 
 h2{
