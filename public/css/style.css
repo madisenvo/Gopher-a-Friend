@@ -46,7 +46,7 @@ header {
     box-sizing: border-box;
 }
 
-.signup input, .signupBtn, .login input, .loginBtn {
+.signup input, .signupBtn, .login input, .homeLoginBtn {
     display: block;
     width: 100%;
     padding: 7px;
@@ -160,7 +160,7 @@ ul{
     border-color: rgba(255,255,255,1);
 }
 
-.signupBtn {
+.signupBtn, .homeLoginBtn{
     display:inline-block;
     padding:0.3em 1.2em;
     border:0.16em solid rgba(255,255,255,0);
