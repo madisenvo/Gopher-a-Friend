@@ -4,66 +4,67 @@ const { ArtPost, User } = require('../models');
 
 // see all posts
 router.get('/', (req, res) => {
-    ArtPost.findAll({
-            attributes: [
-                'id',
-                'art_text',
-            ],
-            include: [{
-                    model: User,
-                    attributes: ['username'],
-                },
-            ]
+  ArtPost.findAll({
+    attributes: ['id', 'art_text'],
+    include: [
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
+    .then((postData) => {
+      const artPosts = postData.map((artPost) =>
+        artPost.get({
+          plain: true,
         })
-        .then(postData => {
-            const artPosts = postData.map(artPost => artPost.get({
-                plain: true
-            }));
+      );
 
-            res.render('art', {
-                artPosts
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+      res.render('art', {
+        artPosts,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // update a post
+//where clause needed in orhr sections
 router.get('/update/:id', (req, res) => {
-    ArtPost.findOne({
-        attributes: [
-            'id',
-            'art_text',
-        ],
-        include: [{
-                model: User,
-                attributes: ['username'],
-            },
-        ]
-        })
-        .then(postData => {
-            if (!postData) {
-                res.status(404).json({
-                    message: 'Uh Oh! No post found.'
-                });
-                return;
-            }
-
-            const artPost = postData.get({
-                plain: true
-            });
-
-            res.render('editArt', {
-                artPost,
-                loggedIn: true
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
+  ArtPost.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
+    .then((postData) => {
+      if (!postData) {
+        res.status(404).json({
+          message: 'Uh Oh! No post found.',
         });
-})
+        return;
+      }
+
+      const artPost = postData.get({
+        plain: true,
+      });
+
+      res.render('editArt', {
+        artPost,
+        loggedIn: true,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;
