@@ -260,10 +260,11 @@ h1 {
     background-color:rgb(77, 61, 186);
     color: rgb(250, 244, 244);
     border: 2px solid rgb(235, 14, 238);
+    border-radius: 2em;
     padding: 10px 20px;
     text-align: bottom;
     text-decoration: none;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 /* user posts and edit styling */
@@ -273,6 +274,7 @@ h1 {
     width: 500px;
     text-align: center;
     margin: 8px;
+    border-radius: 2em;
 }
 
 .name-post {
