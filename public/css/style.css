@@ -109,6 +109,7 @@ ul{
     font-family: 'Butterfly Kids', cursive;
     font-size: 50px;
     font-weight: bold;
+    margin-bottom: 0;
 }
 
 
@@ -310,7 +311,7 @@ h1 {
 .user-text {
     font-family: 'Fredericka the Great';
     font-size: 20px;
-    background-color: #4e9af1;
+    /* background-color: #4e9af1; */
     padding: 20px;
     border-radius: 20%;
     color:#FFFFFF;
