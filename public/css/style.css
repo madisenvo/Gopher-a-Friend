@@ -115,7 +115,11 @@ ul {
     margin-bottom: 0;
 }
 
-
+.homeMessage{
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
 
 /* buttons */
 @media all and (max-width:30em) {
