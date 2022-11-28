@@ -355,21 +355,48 @@ h2 {
 }
 
 /* making site responsive */
-@media (max-width: 800px) {
+@media (max-width: 1182px) {
 
     header,
-    #parkdata,
-    #forecast-container {
-        width: 100%;
+    .signup,
+    .login{
+        margin:0;
     }
 
-    #map {
-        width: auto !important;
+    .title{
+        font-size: 100px;
+        position: relative;
+        top: 50px;
+    }
+}
+
+@media (max-width: 785px) {
+
+    .title
+    {
+        font-size: 70px;
+        position: relative;
+        top: 60px;
+    }
+}
+
+
+@media (max-width: 715px) {
+
+    .signup,
+    .login{
+        margin:0;
+        width:100%;
     }
 
-    #parkinfo,
-    #thingstodo,
-    #contactinfo {
-        text-align: center;
+}
+
+@media (max-width: 375px) {
+
+    .title
+    {
+        font-size: 50px;
+        position: relative;
+        top: 60px;
     }
 }
