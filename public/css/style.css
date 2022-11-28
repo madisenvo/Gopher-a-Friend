@@ -326,30 +326,15 @@ h2 {
     font-style: bold;
 }
 
-.topic1 {
-    align-items: center;
-    /*this does not center the text on the pic*/
-}
-
-#art {
-    height: 300px;
-    width: 300px;
-}
-
-.topic2 {
-    align-items: center;
-}
-
-#geography {
-    height: 300px;
-    width: 300px;
-}
-
+.topic1,
+.topic2,
 .topic3 {
     align-items: center;
 }
 
-#tech {
+#tech,
+#geography,
+#art{
     height: 300px;
     width: 300px;
 }
@@ -391,12 +376,18 @@ h2 {
 
 }
 
-@media (max-width: 375px) {
+@media (max-width: 555px) {
 
+    header{
+        width: 100%;
+    }
     .title
     {
         font-size: 50px;
         position: relative;
         top: 60px;
+    }
+    .user-info{
+        width:100%;
     }
 }
