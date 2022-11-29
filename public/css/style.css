@@ -1,6 +1,11 @@
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f684b0b8;
+}
+
+.color-change{
+    filter: invert(100%)
 }
 
 header {
@@ -11,6 +16,14 @@ header {
     padding: 0;
     height: 200px;
     width: 100%;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 .container {
