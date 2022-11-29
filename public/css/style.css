@@ -288,6 +288,7 @@ h1 {
     margin-right: 140px;
     background-color: #f14e4e;
     height: 350px;
+    margin-top: 16px;
 }
 
 .entry-field {
@@ -473,7 +474,8 @@ h2 {
 
     .posts {
         padding: 0;
-        margin-right:50px;
+        margin-right: 50px;
+        width: 100%;
     }
 }
 
