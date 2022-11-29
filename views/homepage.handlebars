@@ -1,6 +1,6 @@
 {{!-- this page is displayed when a user selects logout TODO: front end: all formatting--}}
-<div>
-  <h2>Login with your koala-fications to get chatting!</h2>
+<div class="homeMessage">
+  <h2>Login to get chatting!</h2>
       <nav style="position: relative; bottom: 0">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
@@ -10,6 +10,6 @@
         <a class="loginBtn" href="/login">Login</a>
         {{/if}}
       </nav>
+  </div>
 
   <img src="/images/loginBackgroundImg.png" alt="gopher" width="500" height="500" class="center">
-</div>
