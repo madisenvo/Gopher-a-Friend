@@ -300,7 +300,6 @@ h1 {
 .user-text {
     font-family: 'Fredericka the Great';
     font-size: 20px;
-    /* background-color: #4e9af1; */
     padding: 0px 20px;
     border-radius: 20%;
     color: #FFFFFF;
@@ -472,10 +471,10 @@ h2 {
         padding:0;
     }
 
-    .posts {
-        padding: 0;
-        margin-right:50px;
+    #post-body {
+        width: 175px;
     }
+
 }
 
 @media (max-width: 555px) {
