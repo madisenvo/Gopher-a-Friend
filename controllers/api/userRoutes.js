@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { username: req.body.username } });
-    console.log("🚀 ~ file: userRoutes.js ~ line 22 ~ router.post ~ userData", userData)
+    console.log("🚀 ~ file: userroutes.js ~ line 22 ~ router.post ~ userData", userData)
 
     if (!userData) {
       res
