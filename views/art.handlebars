@@ -3,7 +3,7 @@
 
 <section class="posts">
     <div>
-        <ul class="post-list">
+        <ul id="color-change" class="post-list">
             <li>
                 {{#each artPosts as |artPost|}}
                     {{> artPosts artPost}}
@@ -29,4 +29,13 @@
     </section>
 </article>
 
-<script src="/js/artnew.js"></script>
+<script src="/js/artnew.js">
+function colorChange(){
+    var element = document.getElementById("color-change");
+    if (element.classList.contains("color-change")) {
+        element.classList.remove("color-change");
+    } else {
+        element.classList.add("color-change");
+    }
+}
+</script>
