@@ -1,6 +1,6 @@
 <article>
     <div>
-        <div id="color-change" class="card" onclick="colorChange()">
+        <div class="card">
             <div class="name-post">
                 <a href="art/update/{{id}}" class="links">{{user.username}}</a>
             </div>
@@ -17,14 +17,4 @@
 
     </div>
 </article>
-
-<script>
-function colorChange(){
-    var element = document.getElementById("color-change");
-    if (element.classList.contains("color-change")) {
-        element.classList.remove("color-change");
-    } else {
-        element.classList.add("color-change");
-    }
-}
-</script>   
+ 
