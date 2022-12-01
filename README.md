@@ -13,17 +13,16 @@ Gopher a Friend is a place for kids to discuss their interests with other kids t
 6. To ask a question click the chat box and you will be connected with one of the team.
 7. To log out navigate back to your profile and click "Log out".
 
-###Home
-----
+### Home
 <img src="public\images\homeScreenShot.PNG">
-###Login
-----
+
+### Login
 <img src="public\images\Screen Shot 2022-11-26 at 1.36.20 PM.png">
-###Profile
-----
+
+### Profile
 <img src="public\images\profileScreenShot.PNG">
-###Geography
-----
+
+### Geography
 <img src="public\images\GeoScreenShot.PNG">
 
 ## Technology
