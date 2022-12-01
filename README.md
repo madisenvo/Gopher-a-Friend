@@ -7,10 +7,10 @@ Gopher a Friend is a place for kids to discuss their interests with other kids t
 ## Navigation
 1. Click "Login"
 2. Create a profile
-3. Choose an intrest
+3. Choose an interest
 4. Create a post
 5. To edit or delete a post click your user name above the post you want to edit and procced to change your post.
-6. To ask a question click the chat box and you will be connedted with one of the team.
+6. To ask a question click the chat box and you will be connected with one of the team.
 7. To log out navigate back to your profile and click "Log out".
 
 ###Home
@@ -51,5 +51,5 @@ Gopher a Friend is a place for kids to discuss their interests with other kids t
 ## Future
 * Teacher created daily topics for their class
 * Profile Gophers
-* Resorce Page
+* Resource Page
 * Positive Affirmations
