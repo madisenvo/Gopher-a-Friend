@@ -49,7 +49,7 @@ Gopher a Friend is a place for kids to discuss their interests with other kids t
 <a href="https://gopher-a-friend.herokuapp.com/">https://gopher-a-friend.herokuapp.com/</a>
 
 ## Future
-* Teacher created aily topics for their class
+* Teacher created daily topics for their class
 * Profile Gophers
 * Resorce Page
 * Positive Affirmations
