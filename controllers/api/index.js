@@ -2,30 +2,30 @@ const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 
 //Geography Routes
-const GeoPostRoutes = require('./GeoPostRoutes');
+const geoPostRoutes = require('./geoPostRoutes');
 
 
 //Tech Routes
-const TechPostRoutes = require('./TechPostRoutes');
+const techPostRoutes = require('./techPostRoutes');
 
 
 //Art Routes
-const ArtPostRoutes = require('./ArtPostRoutes');
+const artPostRoutes = require('./artPostRoutes');
 
 
 //User model for routes
 router.use('/user', userRoutes);
 
 //Use Geo models for routes
-router.use('/geopost', GeoPostRoutes);
+router.use('/geopost', geoPostRoutes);
 
 
 //Tech model for routes
-router.use('/techpost', TechPostRoutes);
+router.use('/techpost', techPostRoutes);
 
 
 //Art model for routes
-router.use('/artpost', ArtPostRoutes);
+router.use('/artpost', artPostRoutes);
 
 
 module.exports = router;

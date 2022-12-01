@@ -1,6 +1,11 @@
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f684b0b8;
+}
+
+.color-change{
+    filter: invert(100%)
 }
 
 header {
@@ -13,9 +18,17 @@ header {
     width: 100%;
 }
 
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
 .container {
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 }
 
@@ -278,7 +291,7 @@ h1 {
 }
 
 .createPost {
-    float: left;
+    float: right;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
@@ -300,7 +313,6 @@ h1 {
 .user-text {
     font-family: 'Fredericka the Great';
     font-size: 20px;
-    /* background-color: #4e9af1; */
     padding: 0px 20px;
     border-radius: 20%;
     color: #FFFFFF;
@@ -472,10 +484,10 @@ h2 {
         padding:0;
     }
 
-    .posts {
-        padding: 0;
-        margin-right:50px;
+    #post-body {
+        width: 175px;
     }
+
 }
 
 @media (max-width: 555px) {
@@ -493,4 +505,29 @@ h2 {
     .topics {
         width: 100%;
     }
+}
+
+@media (max-width: 375px) {
+    .createPost {
+        width: 95%;
+        height: 300px;
+        margin: 0;
+    }
+
+    .card {
+        width: 95%;
+        padding:0;
+        margin:0;
+        margin-top: 8px;
+    }
+    
+    .posts{
+        padding:0;
+        margin:0;
+    }
+
+    #post-body {
+        width: 175px;
+    }
+
 }
