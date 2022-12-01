@@ -321,6 +321,7 @@ h1 {
 .posts {
     float: left;
     padding-left: 100px;
+    height: fit-content;
 }
 
 
