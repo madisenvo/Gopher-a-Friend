@@ -2,7 +2,7 @@
 <img src="./public/images/headerImg.PNG">
 
 ## Description
-Gopher a Friend is a place for kids to discuss their intrests with other kids that share those intrests. An 8 year old kid who is obsessed with Uzbekistan is unlikely to find another kid that even knows that the country extists let alone wants to talk about it. Gopher a Friend is the place where that kid can find the 10 other kids spread across the country who are also enthralled with Uzbekistan and can talk about it and learn from each other. 
+Gopher a Friend is a place for kids to discuss their interests with other kids that share those interests. An 8 year old kid who is obsessed with Uzbekistan is unlikely to find another kid that even knows that the country exists let alone wants to talk about it. Gopher a Friend is the place where that kid can find the 10 other kids spread across the country who are also enthralled with Uzbekistan and can talk about it and learn from each other. 
 
 ## Navigation
 1. Click "Login"
@@ -46,6 +46,10 @@ Gopher a Friend is a place for kids to discuss their intrests with other kids th
 <a href="https://github.com/madisenvo/Gopher-a-Friend">Gopher a Friend</a>
 
 ## Site
-<a href="https://gopherafriend.io">www.gopherafriend.io</a>
+<a href="https://gopher-a-friend.herokuapp.com/">https://gopher-a-friend.herokuapp.com/</a>
 
 ## Future
+* Teacher created aily topics for their class
+* Profile Gophers
+* Resorce Page
+* Positive Affirmations
