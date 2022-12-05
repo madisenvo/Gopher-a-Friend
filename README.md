@@ -1,6 +1,8 @@
 
 <img src="./public/images/headerImg.PNG">
 
+https://gopher-a-friend.herokuapp.com/profile
+
 ## Description
 Gopher a Friend is a place for kids to discuss their interests with other kids that share those interests. An 8 year old kid who is obsessed with Uzbekistan is unlikely to find another kid that even knows that the country exists let alone wants to talk about it. Gopher a Friend is the place where that kid can find the 10 other kids spread across the country who are also enthralled with Uzbekistan and can talk about it and learn from each other. 
 
